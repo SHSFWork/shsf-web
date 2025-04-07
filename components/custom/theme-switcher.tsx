@@ -11,6 +11,7 @@ export default function ThemeSwitcher() {
       type="button"
       size="icon"
       variant="ghost"
+      id="theme-switcher"
       aria-label="Theme switcher"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >

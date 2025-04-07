@@ -13,8 +13,6 @@ type LinkProps = {
 export default function Link(props: LinkProps) {
   const { href, title, className, ...rest } = props;
 
-  console.log("Link", title, isExternalLink(href));
-
   if (isExternalLink(href)) {
     return (
       <a

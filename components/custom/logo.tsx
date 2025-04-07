@@ -32,7 +32,11 @@ export default function Logo(props: LogoProps) {
         draggable={false}
       />
 
-      {isText && <span className="text-lg font-semibold">{SITE.title}</span>}
+      {isText && (
+        <span className="tracking-wide text-lg font-semibold">
+          {SITE.title}
+        </span>
+      )}
     </Link>
   );
 }

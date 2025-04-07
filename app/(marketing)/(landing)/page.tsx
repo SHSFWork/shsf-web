@@ -1,3 +1,5 @@
+import MarketingLandingPage from "@shsfwork/modules/marketing-landing-page";
+
 export default function Landing() {
-  return <p>Landing Page</p>;
+  return <MarketingLandingPage />;
 }
