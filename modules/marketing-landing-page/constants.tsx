@@ -7,6 +7,7 @@ import {
   Minimize,
   Search,
 } from "lucide-react";
+import Image from "next/image";
 
 export const PRINCIPLES = [
   /* MOCK CONTENT */
@@ -93,5 +94,72 @@ export const WALL_OF_LOVE = [
     author: "growbluesky.com",
     createdAt: "Dec 30, 2024",
     product: "screenie.me",
+  },
+];
+
+export const PRODUCTS = [
+  {
+    linkTitle: "Go to Unarkhive",
+    href: "https://unarkhive.com",
+    icon: (
+      <Image
+        src="/unarkhive.png"
+        alt="Unarkhive Logo"
+        width={32}
+        height={32}
+        className="size-6 md:size-8 rounded-md aspect-square object-cover border"
+        priority
+        draggable={false}
+      />
+    ),
+    title: "Unarkhive",
+    description:
+      "Explore curated links across various categories, updomaind daily.",
+    domain: "unarkhive.com",
+    titleClassName: "text-[#1000ff]",
+    className:
+      "[grid-area:stack] grayscale hover:grayscale-0 hover:z-10 transition-all duration-500",
+  },
+  {
+    linkTitle: "Go to Screenie",
+    href: "https://screenie.me",
+    icon: (
+      <Image
+        src="/screenie.png"
+        alt="Screenie Logo"
+        width={32}
+        height={32}
+        className="size-6 md:size-8 rounded-md aspect-square object-cover border"
+        priority
+        draggable={false}
+      />
+    ),
+    title: "Screenie",
+    description: "Effortless Screenshots & Powerful Generators",
+    domain: "screenie.me",
+    titleClassName: "text-orange-500",
+    className:
+      "[grid-area:stack] translate-x-4 translate-y-12 grayscale hover:grayscale-0 hover:z-20 transition-all duration-500",
+  },
+  {
+    linkTitle: "Go to SHSF UI",
+    href: "https://shsfui.com",
+    icon: (
+      <Image
+        src="/shsfui.png"
+        alt="SHSF UI Logo"
+        width={32}
+        height={32}
+        className="size-6 md:size-8 rounded-md aspect-square object-cover border"
+        priority
+        draggable={false}
+      />
+    ),
+    title: "SHSF UI",
+    description: "Motion-first UI library for those who care about details.",
+    domain: "shsfui.com",
+    titleClassName: "text-blue-500",
+    className:
+      "[grid-area:stack] translate-x-8 translate-y-24 grayscale hover:grayscale-0 hover:z-30 transition-all duration-500",
   },
 ];

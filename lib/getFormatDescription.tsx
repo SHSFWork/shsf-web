@@ -4,19 +4,19 @@ const linkify = new LinkifyIt();
 const hashtagRegex = /#[\w]+/g;
 const mentionRegex = /@[\w.]+/g; // Adjusted to include periods
 
-interface HashtagMatch {
+type HashtagMatch = {
   index: number;
   lastIndex: number;
   text: string;
   url: string;
-}
+};
 
-interface MentionMatch {
+type MentionMatch = {
   index: number;
   lastIndex: number;
   text: string;
   url: string;
-}
+};
 
 export default function getFormatDescription(description: string) {
   const linkMatches = linkify.match(description) || [];

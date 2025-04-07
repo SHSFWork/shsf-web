@@ -4,13 +4,13 @@ import { cn } from "@shsfwork/lib/cn";
 import { motion, useMotionTemplate, useMotionValue } from "motion/react";
 import React, { useCallback, useEffect, useRef } from "react";
 
-interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {
+type MagicCardProps = {
   gradientSize?: number;
   gradientColor?: string;
   gradientOpacity?: number;
   gradientFrom?: string;
   gradientTo?: string;
-}
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export function MagicCard({
   children,

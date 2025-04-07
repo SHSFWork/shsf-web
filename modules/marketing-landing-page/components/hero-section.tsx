@@ -1,6 +1,18 @@
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import Section from "@shsfwork/components/semantic-elements/section";
-import { SITE } from "@shsfwork/constants/common";
+import { ONLINE, SITE } from "@shsfwork/constants/common";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@shsfwork/components/shadcn/tooltip";
+import { Button } from "@shsfwork/components/custom/3d-button";
+
+import { EmailCopyButton } from "./email-button";
+import Link from "@shsfwork/components/custom/link";
+import { ChevronRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -20,6 +32,39 @@ export default function HeroSection() {
           put a dent in the universe.
         </Balancer>
       </p>
+
+      <div className="flex items-center justify-center animate-appear opacity-0 delay-500 gap-4 flex-wrap">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ai" size="lg" className="px-16" asChild>
+                <a title={ONLINE.contact.title} href={ONLINE.contact.href}>
+                  Get in touch
+                </a>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent
+              sideOffset={4}
+              className="bg-indigo-500 text-white shadow-md dark:bg-indigo-700"
+            >
+              <EmailCopyButton />
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <Button variant="outline" size="lg" asChild className="group">
+          <Link
+            title={ONLINE.cal.title}
+            className="flex items-center gap-1"
+            href={ONLINE.cal.href}
+          >
+            <span>Schedule a call</span>
+            <ChevronRight
+              className="transition-transform group-hover:translate-x-1 duration-300"
+              size={16}
+            />
+          </Link>
+        </Button>
+      </div>
     </Section>
   );
 }

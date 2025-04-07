@@ -16,11 +16,11 @@ export default function SectionHeader(props: SectionHeaderProps) {
       )}
       {...rest}
     >
-      <h2 className="text-3xl font-semibold text-center">
+      <h2 className="text-3xl md:text-5xl font-semibold text-center">
         <Balancer id="section-header-title">{title}</Balancer>
       </h2>
       {description && (
-        <p className="text-lg text-center font-light">
+        <p className="text-lg md:text-xl text-center font-light">
           <Balancer id="section-header-description">{description}</Balancer>
         </p>
       )}
