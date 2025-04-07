@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import { cn } from "@shsfwork/lib/cn";
+import NextThemesProvider from "@shsfwork/providers/next-themes-provider";
 
 import "@shsfwork/assets/styles/globals.css";
 
@@ -21,9 +23,9 @@ export const metadata: Metadata = {
 
 export default function Root({ children }: ChildrenType) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn(geistSans.variable, geistMono.variable)}>
-        {children}
+        <NextThemesProvider>{children}</NextThemesProvider>
       </body>
     </html>
   );

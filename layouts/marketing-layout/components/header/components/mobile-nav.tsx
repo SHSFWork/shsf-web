@@ -30,7 +30,7 @@ export default function MobileNav() {
 
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" aria-label="Toggle menu">
+          <Button variant="ghost" size="icon" aria-label="Toggle menu">
             <Menu />
           </Button>
         </SheetTrigger>

@@ -45,12 +45,12 @@ export default function Footer() {
 
         <Container
           id="marketing-footer-socials"
-          className="flex flex-col justify-between gap-6 border-t md:flex-row md:items-center md:gap-2"
+          className="flex flex-col justify-between gap-6 md:flex-row md:items-center md:gap-2"
         >
           <FooterNav id="footer-nav-socials" className="flex-row">
             {FOOTER_SOCIALS.map((social, i) => (
               <li key={i}>
-                <Button asChild variant="outline" size="icon">
+                <Button asChild variant="ghost" size="icon">
                   <Link href={social.href} title={social.href}>
                     {<social.icon />}
                     <span className="sr-only">
@@ -62,7 +62,7 @@ export default function Footer() {
             ))}
           </FooterNav>
 
-          <p className="text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             ©{" "}
             <Link title={SITE.title} href={SITE.href}>
               {SITE.title}
