@@ -1,4 +1,5 @@
-import { Book, Sunset, Trees } from "lucide-react";
+import findProductByPath from "@shsfwork/lib/findProductByPath";
+import { Book, Trees } from "lucide-react";
 
 export const HEADER_NAV = [
   { title: "Home", url: "#" },
@@ -7,24 +8,17 @@ export const HEADER_NAV = [
     url: "#",
     items: [
       {
-        title: "SHSF UI",
-        description: "A component library for building beautiful UIs",
+        title: "All Products",
+        description: "Explore all our products",
         icon: Book,
-        url: "#",
+        url: "/products",
       },
       {
-        title: "Unarkhive",
-        description: "A powerful tool for managing your data",
+        title: findProductByPath("unarkhive")?.title,
+        description: findProductByPath("unarkhive")?.excerpt,
         icon: Trees,
-        url: "#",
-      },
-      {
-        title: "Screenie",
-        description: "Capture and share your screen with ease",
-        icon: Sunset,
-        url: "#",
+        url: findProductByPath("unarkhive")?.url,
       },
     ],
   },
-  { title: "Blog", url: "#" },
 ];

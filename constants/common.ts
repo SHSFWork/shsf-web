@@ -1,4 +1,5 @@
 export const SITE = {
+  author: "Ozan Tekin",
   title: "SHSF Work",
   href: "/",
   domain: "shsf.work",

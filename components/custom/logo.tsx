@@ -23,7 +23,7 @@ export default function Logo(props: LogoProps) {
       {...rest}
     >
       <Image
-        src="/logo.png"
+        src="/brand/logo.png"
         alt={SITE.title + " Logo"}
         width={40}
         height={40}

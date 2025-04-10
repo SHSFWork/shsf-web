@@ -16,7 +16,7 @@ import Container from "@shsfwork/components/semantic-elements/container";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 
 import FooterNav from "./components/nav";
-import { NewsletterSection } from "./components/newsletter";
+import { NewsletterSection } from "../../../../components/custom/newsletter";
 import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
 import { FOOTER_MARKETING_NAV } from "./constants";
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
 
         <div className="space-y-2">
-          <h5>Website</h5>
+          <h5>Sitemap</h5>
           <FooterNav items={FOOTER_MARKETING_NAV.website} id="footer-nav" />
         </div>
         <div className="space-y-2">
@@ -104,7 +104,7 @@ export default function Footer() {
         >
           <span>Built with 🍕 by </span>
           <Avatar className="rounded-md size-6 border">
-            <AvatarImage src="/me.png" alt="@ozantekin" />
+            <AvatarImage src="/logos/me.png" alt="@ozantekin" />
             <AvatarFallback className="rounded-md text-xs">OT</AvatarFallback>
           </Avatar>
         </Link>

@@ -56,7 +56,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <Section id="marketing-footer-newsletter" className="max-w-xl">
+    <Section id="marketing-newsletter" className="max-w-xl">
       <h4 className="mb-6 text-xl/[1.1] font-extrabold tracking-tight text-foreground md:text-2xl/[1.1]">
         Get notified when new stuff drops.
       </h4>

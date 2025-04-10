@@ -10,7 +10,7 @@ import { MagicCard } from "@shsfwork/components/custom/magic-card";
 
 import getFormatDescription from "@shsfwork/lib/getFormatDescription";
 
-import SectionHeader from "./section-header";
+import PageHeader from "../../../components/custom/page-header";
 
 import { WALL_OF_LOVE } from "../constants";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
@@ -20,7 +20,7 @@ export default function WallOfLoveSection() {
 
   return (
     <Section id="wall-of-love" className="max-w-4xl mx-auto">
-      <SectionHeader title="Wall of Love" className="!mb-8" />
+      <PageHeader title="Wall of Love" className="!mb-8" />
 
       <div className="flex flex-wrap items-center justify-center gap-4">
         {WALL_OF_LOVE.map((post, index) => (

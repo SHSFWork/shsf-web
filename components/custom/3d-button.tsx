@@ -4,7 +4,7 @@ import { cn } from "@shsfwork/lib/cn";
 import { Slot } from "@radix-ui/react-slot";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 gap-2 border",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 gap-2 border cursor-pointer",
   {
     variants: {
       variant: {
@@ -32,7 +32,7 @@ const buttonVariants = cva(
         sm: "h-9 rounded-lg px-3",
         lg: "h-11 rounded-xl px-8",
         xs: "h-8 rounded-md px-4 text-sm",
-        icon: "h-10 w-10 border-b border-transparent",
+        icon: "size-10",
       },
     },
     defaultVariants: {

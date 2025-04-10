@@ -1,3 +1,4 @@
+import findProductByPath from "@shsfwork/lib/findProductByPath";
 import {
   Smile,
   Zap,
@@ -99,12 +100,12 @@ export const WALL_OF_LOVE = [
 
 export const PRODUCTS = [
   {
-    linkTitle: "Go to Unarkhive",
-    href: "https://unarkhive.com",
+    linkTitle: `Go to ${findProductByPath("unarkhive")?.title}`,
+    href: findProductByPath("unarkhive")?.url,
     icon: (
       <Image
-        src="/unarkhive.png"
-        alt="Unarkhive Logo"
+        src="/www/products/unarkhive/assets/logo.png"
+        alt={`${findProductByPath("unarkhive")?.title} Logo`}
         width={32}
         height={32}
         className="size-6 md:size-8 rounded-md aspect-square object-cover border"
@@ -112,20 +113,19 @@ export const PRODUCTS = [
         draggable={false}
       />
     ),
-    title: "Unarkhive",
-    description:
-      "Explore curated links across various categories, updomaind daily.",
-    domain: "unarkhive.com",
-    titleClassName: "text-[#1000ff]",
+    title: findProductByPath("unarkhive")?.title,
+    description: findProductByPath("unarkhive")?.excerpt,
+    domain: findProductByPath("unarkhive")?.link.label,
+    titleClassName: "text-blue-600",
     className:
       "[grid-area:stack] grayscale hover:grayscale-0 hover:z-10 transition-all duration-500",
   },
   {
     linkTitle: "Go to Screenie",
-    href: "https://screenie.me",
+    href: "/products/screenie",
     icon: (
       <Image
-        src="/screenie.png"
+        src="/logos/screenie.png"
         alt="Screenie Logo"
         width={32}
         height={32}
@@ -143,10 +143,10 @@ export const PRODUCTS = [
   },
   {
     linkTitle: "Go to SHSF UI",
-    href: "https://shsfui.com",
+    href: "/products/shsf-ui",
     icon: (
       <Image
-        src="/shsfui.png"
+        src="/logos/shsfui.png"
         alt="SHSF UI Logo"
         width={32}
         height={32}

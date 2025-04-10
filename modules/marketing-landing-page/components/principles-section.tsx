@@ -3,14 +3,14 @@ import { LucideIcon } from "lucide-react";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import Section from "@shsfwork/components/semantic-elements/section";
 
-import SectionHeader from "./section-header";
+import PageHeader from "../../../components/custom/page-header";
 
 import { PRINCIPLES } from "../constants";
 
 export default function PrinciplesSection() {
   return (
     <Section id="principles">
-      <SectionHeader
+      <PageHeader
         title="Our Principles"
         description="The core values that guide our work and shape our culture."
       />

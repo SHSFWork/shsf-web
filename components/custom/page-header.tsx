@@ -1,12 +1,12 @@
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import { cn } from "@shsfwork/lib/cn";
 
-type SectionHeaderProps = {
+type PageHeaderProps = {
   title: string;
   description?: string;
 } & React.ComponentProps<"div">;
 
-export default function SectionHeader(props: SectionHeaderProps) {
+export default function PageHeader(props: PageHeaderProps) {
   const { title, description, className, ...rest } = props;
   return (
     <div

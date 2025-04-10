@@ -1,15 +1,15 @@
 export const FOOTER_MARKETING_NAV = {
   website: [
-    { href: "/", title: "Products" },
-    { href: "/", title: "Blog" },
+    { href: "/", title: "Home" },
+    { href: "/products", title: "Products" },
   ],
   legal: [
     { href: "/", title: "Privacy Policy" },
     { href: "/", title: "Terms of Service" },
   ],
   product: [
-    { href: "https://shsfui.com", title: "SHSF UI" },
+    { href: "/products/unarkhive", title: "Unarkhive" },
     { href: "https://www.screenie.me", title: "Screenie" },
-    { href: "https://www.unarkhive.com", title: "Unarkhive" },
+    { href: "https://shsfui.com", title: "SHSF UI" },
   ],
 };

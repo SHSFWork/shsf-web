@@ -38,7 +38,10 @@ export default function HeroSection() {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ai" size="lg" className="px-16" asChild>
-                <a title={ONLINE.contact.title} href={ONLINE.contact.href}>
+                <a
+                  title={ONLINE.contact.title}
+                  href={ONLINE.contact.href + "?subject=Hello!"}
+                >
                   Get in touch
                 </a>
               </Button>
