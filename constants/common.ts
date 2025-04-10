@@ -1,8 +1,12 @@
 export const SITE = {
   author: "Ozan Tekin",
   title: "SHSF Work",
+  subtitle: "Stay Hungry, Stay Foolish",
+  description:
+    "Digital products that think different, challenge the status quo, and put a dent in the universe.",
   href: "/",
   domain: "shsf.work",
+  url: "https://shsf.work",
 };
 
 export const ONLINE = {
