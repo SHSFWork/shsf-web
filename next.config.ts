@@ -1,15 +1,6 @@
 import type { NextConfig } from "next";
 import { withContentCollections } from "@content-collections/next";
 
-const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default withContentCollections(nextConfig);

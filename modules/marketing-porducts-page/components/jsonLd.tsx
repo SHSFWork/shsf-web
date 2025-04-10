@@ -1,20 +1,21 @@
 import { Product } from "content-collections";
-import { baseUrl, createCompleteUrl } from "../lib";
+
 import { Blog, BlogPosting, Person } from "schema-dts";
 import { SITE } from "@shsfwork/constants/common";
+import { absoluteUrl, baseUrl } from "@shsfwork/lib/absoluteUrl";
 
 const author: Person = {
   "@type": "Person",
   name: SITE.author,
-  url: baseUrl,
+  url: baseUrl(),
 };
 
 const product: Blog = {
   "@type": "Blog",
   name: SITE.domain,
-  url: baseUrl,
-  image: baseUrl + "/og",
-  description: `A product by ${SITE.author}`,
+  url: baseUrl(),
+  image: absoluteUrl("/og"),
+  description: "Explore our products",
   author,
 };
 
@@ -29,14 +30,14 @@ type MarketingProductDetailsSchemaProps = {
 export function MarketingProductDetailsSchema({
   product,
 }: MarketingProductDetailsSchemaProps) {
-  const url = createCompleteUrl(product.url);
+  const url = absoluteUrl(product.url);
   const schema: BlogPosting = {
     "@type": "BlogPosting",
     headline: product.title,
     description: product.excerpt,
 
     url,
-    image: baseUrl + "/og",
+    image: absoluteUrl("/og"),
 
     datePublished: product.createdAt,
     dateCreated: product.createdAt,
@@ -46,7 +47,7 @@ export function MarketingProductDetailsSchema({
 
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": baseUrl,
+      "@id": baseUrl(),
     },
   };
   return <JsonLdSchema schema={schema} />;
