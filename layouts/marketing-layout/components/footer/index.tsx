@@ -18,7 +18,7 @@ import { NewsletterSection } from "../../../../components/custom/newsletter";
 import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
 import { FOOTER_MARKETING_NAV } from "./constants";
-import OpenSourceBadge from "@shsfwork/components/custom/open-sourcebadge";
+import OpenSourceBadge from "@shsfwork/components/custom/open-source-badge";
 
 export default function Footer() {
   return (
