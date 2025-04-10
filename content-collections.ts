@@ -135,6 +135,10 @@ const products = defineCollection({
       readingTime: calculateReadingTime(product.content),
       lastModification,
       image,
+      og: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
+        product.title
+      )}&description=${encodeURI(product.excerpt)}`,
+      slugAsParams: product._meta.path.split("/").slice(1).join("/"),
       url: `/products/${product._meta.path}`,
     };
   },

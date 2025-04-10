@@ -14,7 +14,10 @@ const product: Blog = {
   "@type": "Blog",
   name: SITE.domain,
   url: baseUrl(),
-  image: absoluteUrl("/og"),
+  // TODO:
+  image: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
+    "Products"
+  )}&description=${encodeURI("Explore all our products")}`,
   description: "Explore our products",
   author,
 };
@@ -37,7 +40,7 @@ export function MarketingProductDetailsSchema({
     description: product.excerpt,
 
     url,
-    image: absoluteUrl("/og"),
+    image: product.og,
 
     datePublished: product.createdAt,
     dateCreated: product.createdAt,

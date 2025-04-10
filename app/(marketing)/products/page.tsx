@@ -8,5 +8,9 @@ export default function MarketingProducts() {
 
 export const metadata: Metadata = constructMetadata({
   title: "Products",
-  description: "Explore all our products",
+  description: "Explore our products",
+  // TODO:
+  image: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
+    "Products"
+  )}&description=${encodeURI("Explore all our products")}`,
 });
