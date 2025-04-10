@@ -1,7 +1,5 @@
 import { SITE, ONLINE } from "@shsfwork/constants/common";
 
-import Image from "next/image";
-
 import {
   Avatar,
   AvatarFallback,
@@ -20,6 +18,7 @@ import { NewsletterSection } from "../../../../components/custom/newsletter";
 import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
 import { FOOTER_MARKETING_NAV } from "./constants";
+import OpenSourceBadge from "@shsfwork/components/custom/open-sourcebadge";
 
 export default function Footer() {
   return (
@@ -43,24 +42,7 @@ export default function Footer() {
               </Balancer>
             </p>
             <div className="animate-appear opacity-0 delay-500">
-              <Link
-                title={ONLINE.bluesky.title}
-                href={ONLINE.bluesky.href}
-                className="flex items-center gap-2 text-sm group/link"
-              >
-                <span>Follow us on</span>
-                <figure className="aspect-square size-5 grayscale group-hover/link:grayscale-0 transition-all duration-200">
-                  <Image
-                    className="bg-cover bg-center bg-no-repeat object-cover"
-                    src="/badges/bluesky-logo-gradient.png"
-                    alt="Bluesky Logo"
-                    loading="lazy"
-                    width={32}
-                    height={32}
-                    draggable={false}
-                  />
-                </figure>
-              </Link>
+              <OpenSourceBadge />
             </div>
             <div className="delay-500 opacity-0 animate-appear inline-block">
               <ThemeSwitcher />
@@ -80,8 +62,11 @@ export default function Footer() {
           />
         </div>
         <div className="space-y-2">
-          <h5>Legal</h5>
-          <FooterNav items={FOOTER_MARKETING_NAV.legal} id="footer-nav-legal" />
+          <h5>Online</h5>
+          <FooterNav
+            items={FOOTER_MARKETING_NAV.online}
+            id="footer-nav-legal"
+          />
         </div>
       </Container>
 
