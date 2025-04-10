@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { allProducts } from "@shsfwork/.content-collections/generated";
 
 import ProductDetailPage from "@shsfwork/modules/marketing-product-detail-page";
+import { Metadata } from "next";
+import { absoluteUrl } from "@shsfwork/lib/absoluteUrl";
+import { SITE } from "@shsfwork/constants/common";
 
 type MarketingProductDetailsProps = {
   params: Promise<{
@@ -22,25 +25,39 @@ export default async function MarketingProductDetails({
   return <ProductDetailPage product={product} />;
 }
 
-export const generateMetadata = async ({
+export async function generateMetadata({
   params,
-}: MarketingProductDetailsProps) => {
+}: MarketingProductDetailsProps): Promise<Metadata> {
   const resolvedParams = await params;
   const product = allProducts.find((p) => p._meta.path === resolvedParams.slug);
+
   if (!product) {
-    return;
+    return {};
   }
 
   return {
-    title: product.title,
+    title: `${product.title} — ${SITE.title}`,
     description: product.excerpt,
     openGraph: {
       title: product.title,
       description: product.excerpt,
       type: "article",
-      alternates: {
-        canonical: product.url,
-      },
+      url: absoluteUrl(product.url),
+      images: [
+        {
+          url: product.image.url,
+          width: 1200,
+          height: 630,
+          alt: product.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.title,
+      description: product.excerpt,
+      images: [product.image],
+      creator: SITE.author,
     },
   };
-};
+}

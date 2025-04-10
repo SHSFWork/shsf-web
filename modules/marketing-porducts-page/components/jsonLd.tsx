@@ -13,7 +13,7 @@ const product: Blog = {
   "@type": "Blog",
   name: SITE.domain,
   url: baseUrl,
-  image: baseUrl + "/opengraph-image",
+  image: baseUrl + "/og",
   description: `A product by ${SITE.author}`,
   author,
 };
@@ -36,7 +36,7 @@ export function MarketingProductDetailsSchema({
     description: product.excerpt,
 
     url,
-    image: url + "/opengraph-image",
+    image: baseUrl + "/og",
 
     datePublished: product.createdAt,
     dateCreated: product.createdAt,
