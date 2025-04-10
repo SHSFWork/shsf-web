@@ -45,7 +45,7 @@ export async function generateMetadata({
       url: absoluteUrl(product.url),
       images: [
         {
-          url: product.image.url,
+          url: absoluteUrl("/og"),
           width: 1200,
           height: 630,
           alt: product.title,
