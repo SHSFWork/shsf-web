@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { SITE } from "@shsfwork/constants/common";
+import { constructMetadata } from "@shsfwork/lib/constructMetadata";
+
 import { cn } from "@shsfwork/lib/cn";
 import NextThemesProvider from "@shsfwork/providers/next-themes-provider";
 
 import "@shsfwork/assets/styles/globals.css";
-import { SITE } from "@shsfwork/constants/common";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,10 +19,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = constructMetadata({
   title: SITE.title,
   description: SITE.description,
-};
+});
 
 export default function Root({ children }: ChildrenType) {
   return (
