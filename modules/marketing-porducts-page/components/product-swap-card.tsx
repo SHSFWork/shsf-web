@@ -47,7 +47,7 @@ const ProductSwapCard = React.forwardRef<HTMLDivElement, ProductSwapCardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          "w-full space-y-4 rounded-lg bg-sidebar p-4 border max-w-96 overflow-hidden",
+          "w-full space-y-4 rounded-lg bg-accent p-4 border max-w-96 overflow-hidden",
           className
         )}
         initial={{ opacity: 0, y: 20 }}

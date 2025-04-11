@@ -2,17 +2,11 @@ import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import Section from "@shsfwork/components/semantic-elements/section";
 import { ONLINE, SITE } from "@shsfwork/constants/common";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@shsfwork/components/shadcn/tooltip";
 import { Button } from "@shsfwork/components/custom/3d-button";
 
-import { EmailCopyButton } from "./email-button";
 import Link from "@shsfwork/components/custom/link";
 import { ChevronRight } from "lucide-react";
+import ContactButton from "./contact-button";
 
 export default function HeroSection() {
   return (
@@ -34,16 +28,17 @@ export default function HeroSection() {
       </p>
 
       <div className="flex items-center justify-center animate-appear opacity-0 delay-500 gap-4 flex-wrap">
-        <TooltipProvider>
+        <ContactButton />
+        {/* <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ai" size="lg" className="px-16" asChild>
-                <a
+                <Link
                   title={ONLINE.contact.title}
                   href={ONLINE.contact.href + "?subject=Hello!"}
                 >
                   Get in touch
-                </a>
+                </Link>
               </Button>
             </TooltipTrigger>
             <TooltipContent
@@ -53,7 +48,7 @@ export default function HeroSection() {
               <EmailCopyButton />
             </TooltipContent>
           </Tooltip>
-        </TooltipProvider>
+        </TooltipProvider> */}
         <Button variant="outline" size="lg" asChild className="group">
           <Link
             title={ONLINE.cal.title}

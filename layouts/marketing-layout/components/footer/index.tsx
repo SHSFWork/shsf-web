@@ -72,7 +72,7 @@ export default function Footer() {
 
       <Container
         id="marketing-footer-newsletter"
-        className="relative overflow-hidden bg-sidebar lg:rounded-xl"
+        className="relative overflow-hidden bg-accent lg:rounded-xl"
       >
         <NewsletterSection />
         <NewsletterBgEffect />

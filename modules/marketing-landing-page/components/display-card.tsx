@@ -39,7 +39,7 @@ function DisplayCard({
       <div>
         <span
           className={cn(
-            "relative inline-flex items-center justify-center rounded-md p-1 bg-sidebar backdrop-blur-sm border",
+            "relative inline-flex items-center justify-center rounded-md p-1 bg-accent backdrop-blur-sm border",
             iconClassName
           )}
         >

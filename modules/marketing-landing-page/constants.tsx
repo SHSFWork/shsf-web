@@ -117,3 +117,36 @@ export const PRODUCTS = [
       "[grid-area:stack] translate-x-8 translate-y-24 grayscale hover:grayscale-0 hover:z-30 transition-all duration-500",
   },
 ];
+
+export const FAQ_ITEMS = [
+  {
+    id: "faq-1",
+    question: "FAQ 1",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: "faq-2",
+    question: "FAQ 2",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: "faq-3",
+    question: "FAQ 3",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: "faq-4",
+    question: "FAQ 4",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: "faq-5",
+    question: "FAQ 5",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];

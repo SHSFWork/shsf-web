@@ -15,7 +15,7 @@ export default function MarketingProductsPage() {
         className="mb-8"
       />
       <Section id="products">
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 place-items-center">
+        <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
           {allProducts.map((p, i) => (
             <li key={i}>
               <article>
