@@ -8,7 +8,6 @@ import {
   Minimize,
   Search,
 } from "lucide-react";
-import Image from "next/image";
 
 export const PRINCIPLES = [
   /* MOCK CONTENT */
@@ -100,64 +99,19 @@ export const WALL_OF_LOVE = [
 
 export const PRODUCTS = [
   {
-    linkTitle: `Go to ${findProductByPath("unarkhive")?.title}`,
-    href: findProductByPath("unarkhive")?.url,
-    icon: (
-      <Image
-        src="/www/products/unarkhive/assets/logo.png"
-        alt={`${findProductByPath("unarkhive")?.title} Logo`}
-        width={32}
-        height={32}
-        className="size-6 md:size-8 rounded-md aspect-square object-cover border"
-        priority
-        draggable={false}
-      />
-    ),
-    title: findProductByPath("unarkhive")?.title,
-    description: findProductByPath("unarkhive")?.excerpt,
-    domain: findProductByPath("unarkhive")?.link.label,
+    ...findProductByPath("unarkhive"),
     titleClassName: "text-blue-600",
     className:
       "[grid-area:stack] grayscale hover:grayscale-0 hover:z-10 transition-all duration-500",
   },
   {
-    linkTitle: "Go to Screenie",
-    href: "/products/screenie",
-    icon: (
-      <Image
-        src="/logos/screenie.png"
-        alt="Screenie Logo"
-        width={32}
-        height={32}
-        className="size-6 md:size-8 rounded-md aspect-square object-cover border"
-        priority
-        draggable={false}
-      />
-    ),
-    title: "Screenie",
-    description: "Effortless Screenshots & Powerful Generators",
-    domain: "screenie.me",
+    ...findProductByPath("screenie"),
     titleClassName: "text-orange-500",
     className:
       "[grid-area:stack] translate-x-4 translate-y-12 grayscale hover:grayscale-0 hover:z-20 transition-all duration-500",
   },
   {
-    linkTitle: "Go to SHSF UI",
-    href: "/products/shsf-ui",
-    icon: (
-      <Image
-        src="/logos/shsfui.png"
-        alt="SHSF UI Logo"
-        width={32}
-        height={32}
-        className="size-6 md:size-8 rounded-md aspect-square object-cover border"
-        priority
-        draggable={false}
-      />
-    ),
-    title: "SHSF UI",
-    description: "Motion-first UI library for those who care about details.",
-    domain: "shsfui.com",
+    ...findProductByPath("shsfui"),
     titleClassName: "text-blue-500",
     className:
       "[grid-area:stack] translate-x-8 translate-y-24 grayscale hover:grayscale-0 hover:z-30 transition-all duration-500",

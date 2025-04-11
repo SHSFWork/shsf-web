@@ -24,7 +24,7 @@ export default function MarketingProductDetailsPage({
   return (
     <>
       <figure className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pb-4">
-        <div className="w-full aspect-square md:aspect-auto relative rounded-xl overflow-hidden">
+        <div className="w-full aspect-square md:aspect-auto relative rounded-xl overflow-hidden border shadow">
           <Image
             src={product.image.url}
             alt={product.title}

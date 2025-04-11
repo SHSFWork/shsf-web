@@ -91,9 +91,9 @@ function MobileSubMenuLink({ item }: { item: HeaderMenuItemProps }) {
       <Link className="block" href={item.url} title={item.title}>
         <div>
           <div className="text-sm font-medium">{item.title}</div>
-          {item.description && (
+          {item.excerpt && (
             <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground line-clamp-1">
-              {item.description}
+              {item.excerpt}
             </p>
           )}
         </div>

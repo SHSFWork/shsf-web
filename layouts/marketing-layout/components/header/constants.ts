@@ -1,24 +1,26 @@
-import findProductByPath from "@shsfwork/lib/findProductByPath";
-import { Book, Trees } from "lucide-react";
+import { allProducts } from "@shsfwork/.content-collections/generated";
+import { HeaderMenuItemProps } from "./types";
+import { Home } from "lucide-react";
 
-export const HEADER_NAV = [
-  { title: "Home", url: "#" },
+export const HEADER_NAV: HeaderMenuItemProps[] = [
+  { title: "Home", url: "/" },
   {
     title: "Products",
     url: "#",
     items: [
       {
         title: "All Products",
-        description: "Explore all our products",
-        icon: Book,
+        icon: Home,
+        excerpt: "Explore all our products",
         url: "/products",
       },
-      {
-        title: findProductByPath("unarkhive")?.title,
-        description: findProductByPath("unarkhive")?.excerpt,
-        icon: Trees,
-        url: findProductByPath("unarkhive")?.url,
-      },
+
+      ...allProducts.map((product) => ({
+        title: product.title,
+        url: product.url,
+        excerpt: product.excerpt,
+        icon: product.icon,
+      })),
     ],
   },
 ];

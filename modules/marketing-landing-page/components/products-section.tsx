@@ -1,13 +1,12 @@
 "use client";
 
+import { ChevronRight } from "lucide-react";
 import Section from "@shsfwork/components/semantic-elements/section";
 import PageHeader from "@shsfwork/components/custom/page-header";
-import DisplayCards from "@shsfwork/components/custom/display-card";
-
-import { PRODUCTS } from "../constants";
 import { Button } from "@shsfwork/components/custom/3d-button";
-import { ChevronRight } from "lucide-react";
 import Link from "@shsfwork/components/custom/link";
+
+import DisplayCards from "./display-card";
 
 export default function ProductsSection() {
   return (
@@ -18,7 +17,7 @@ export default function ProductsSection() {
       />
 
       <div>
-        <DisplayCards cards={PRODUCTS} />
+        <DisplayCards />
       </div>
       <div className="flex flex-col items-center justify-center">
         <Button variant="ai" size="lg" className="group" asChild>

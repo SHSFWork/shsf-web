@@ -13,6 +13,7 @@ import Link from "@shsfwork/components/custom/link";
 
 import { HeaderMenuItemProps } from "../types";
 import { HEADER_NAV } from "../constants";
+import Image from "next/image";
 
 export default function DesktopNav() {
   return (
@@ -34,7 +35,7 @@ function RenderDesktopMenuItem(item: HeaderMenuItemProps) {
         <NavigationMenuContent className="bg-popover text-popover-foreground">
           <div className="grid gap-2 p-2 md:grid-cols-2 md:w-[550px]">
             {item.items.map((subItem) => (
-              <NavigationMenuLink asChild key={subItem.title}>
+              <NavigationMenuLink asChild key={subItem.url}>
                 <DesktopSubMenuLink item={subItem} />
               </NavigationMenuLink>
             ))}
@@ -57,29 +58,39 @@ function RenderDesktopMenuItem(item: HeaderMenuItemProps) {
 }
 
 function DesktopSubMenuLink({ item }: { item: HeaderMenuItemProps }) {
-  const Icon = item.icon;
-
   return (
     <Link
       className="flex items-start gap-1 rounded-md p-2 text-left transition-colors hover:bg-muted focus:bg-muted focus:outline-none w-full"
       href={item.url}
       title={item.title}
     >
-      {Icon && (
+      {item.icon && (
         <div
           className={cn(
             buttonVariants({ variant: "outline", size: "icon" }),
             "!bg-background"
           )}
         >
-          <Icon />
+          {item.icon && typeof item.icon === "string" && (
+            <Image
+              width={24}
+              height={24}
+              src={item.icon}
+              alt={item.title}
+              className="size-6 rounded-sm"
+            />
+          )}
+
+          {item.icon && typeof item.icon !== "string" && (
+            <item.icon className="h-6 w-6" />
+          )}
         </div>
       )}
       <div>
         <div className="text-sm font-medium">{item.title}</div>
-        {item.description && (
+        {item.excerpt && (
           <p className="line-clamp-2 mt-1 text-xs leading-relaxed text-muted-foreground">
-            {item.description}
+            {item.excerpt}
           </p>
         )}
       </div>

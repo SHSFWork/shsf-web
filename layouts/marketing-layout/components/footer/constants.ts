@@ -1,3 +1,5 @@
+import { allProducts } from "@shsfwork/.content-collections/generated";
+
 export const FOOTER_MARKETING_NAV = {
   website: [
     { href: "/", title: "Home" },
@@ -5,8 +7,9 @@ export const FOOTER_MARKETING_NAV = {
   ],
   online: [{ href: "https://github.com/shsfwork", title: "GitHub" }],
   product: [
-    { href: "/products/unarkhive", title: "Unarkhive" },
-    { href: "https://www.screenie.me", title: "Screenie" },
-    { href: "https://shsfui.com", title: "SHSF UI" },
+    ...allProducts.map((product) => ({
+      title: product.title,
+      href: product.url,
+    })),
   ],
 };
