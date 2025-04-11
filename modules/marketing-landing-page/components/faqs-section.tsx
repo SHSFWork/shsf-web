@@ -43,17 +43,22 @@ export default function FaqsSection() {
         </Accordion>
         <div className="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-accent p-4 text-center md:rounded-xl md:p-6 lg:p-8">
           <div className="relative">
-            <Avatar className="absolute mb-4 size-16 origin-bottom -translate-x-[60%] scale-[80%] border md:mb-5">
-              <AvatarImage src="/logos/me.png" alt="@ozantekin" />
+            <Avatar className="absolute mb-4 size-16 origin-bottom -translate-x-[60%] scale-[85%] border md:mb-5">
+              <AvatarImage src="/logos/o.png" alt="@ozan" draggable="false" />
               <AvatarFallback>OT</AvatarFallback>
             </Avatar>
-            <Avatar className="absolute mb-4 size-16 origin-bottom translate-x-[60%] scale-[80%] border md:mb-5">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-3.webp" />
-              <AvatarFallback>SU</AvatarFallback>
+            <Avatar className="absolute mb-4 size-16 origin-bottom translate-x-[60%] scale-[85%] border md:mb-5">
+              <AvatarImage src="/logos/y.png" alt="yigit" draggable="false" />
+              <AvatarFallback>YT</AvatarFallback>
             </Avatar>
             <Avatar className="mb-4 size-16 border md:mb-5">
-              <AvatarImage src="https://shadcnblocks.com/images/block/avatar-1.webp" />
-              <AvatarFallback>SU</AvatarFallback>
+              <AvatarImage
+                src="/logos/n.png"
+                alt="@nida"
+                className="-rotate-45"
+                draggable="false"
+              />
+              <AvatarFallback>NG</AvatarFallback>
             </Avatar>
           </div>
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">

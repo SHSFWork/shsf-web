@@ -9,7 +9,11 @@ export default function Section(props: SectionProps) {
   const { children, className, id, ...rest } = props;
 
   return (
-    <section id={id} className={cn("py-8 md:py-12", className)} {...rest}>
+    <section
+      id={id}
+      className={cn("py-8 sm:py-12 md:py-20", className)}
+      {...rest}
+    >
       {children}
     </section>
   );
