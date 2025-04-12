@@ -37,8 +37,8 @@ export default function Footer() {
             </h1>
             <p className="animate-appear opacity-0 delay-300">
               <Balancer id="marketing-footer-description">
-                Digital products that think different, challenge the status quo,
-                and put a dent in the universe.
+                Crafting fast, responsive, and user-centric web experiences for
+                startups and businesses that convert visitors into customers.
               </Balancer>
             </p>
             <div className="animate-appear opacity-0 delay-500">
@@ -55,7 +55,7 @@ export default function Footer() {
           <FooterNav items={FOOTER_MARKETING_NAV.website} id="footer-nav" />
         </div>
         <div className="space-y-2">
-          <h5>Our Products</h5>
+          <h5>Featured Products</h5>
           <FooterNav
             items={FOOTER_MARKETING_NAV.product}
             id="footer-nav-product"

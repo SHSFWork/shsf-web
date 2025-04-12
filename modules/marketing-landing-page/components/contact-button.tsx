@@ -14,7 +14,7 @@ type ContactButtonProps = {
 };
 
 export default function ContactButton({
-  label = "Get in touch",
+  label = "Reach Out",
 }: ContactButtonProps) {
   return (
     <TooltipProvider>

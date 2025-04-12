@@ -154,7 +154,7 @@ export async function GET(request: Request) {
                     </div>
                   </div>
                 )}
-                <div tw="tracking-tight flex flex-col justify-center text-balance font-semibold text-[80px] max-w-4xl">
+                <div tw="tracking-tight flex flex-col justify-center text-balance font-semibold text-[80px] max-w-4xl text-balance">
                   {title}
                 </div>
                 {description && (

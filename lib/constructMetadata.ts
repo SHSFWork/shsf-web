@@ -35,6 +35,9 @@ export function constructMetadata({
       "web design",
       "software",
       "software development",
+      "screenie",
+      "unarkhive",
+      "shsfui",
     ],
     openGraph: {
       title,

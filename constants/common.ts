@@ -3,7 +3,7 @@ export const SITE = {
   title: "SHSF Work",
   subtitle: "Stay Hungry, Stay Foolish",
   description:
-    "Digital products that think different, challenge the status quo, and put a dent in the universe.",
+    "Crafting fast, responsive, and user-centric web experiences for startups and businesses that convert visitors into customers.",
   href: "/",
   domain: "shsf.work",
   url: "https://shsf.work",

@@ -18,7 +18,10 @@ import { FAQ_ITEMS } from "../constants";
 export default function FaqsSection() {
   return (
     <Section id="faqs">
-      <PageHeader title="FAQs" description="We are here to help you." />
+      <PageHeader
+        title="Common Questions"
+        description=" Everything you need to know about our process and expertise."
+      />
 
       <div className="space-y-8">
         <Accordion
@@ -62,13 +65,13 @@ export default function FaqsSection() {
             </Avatar>
           </div>
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">
-            Still have questions?
+            Start Your Project
           </h3>
           <p className="mb-8 max-w-3xl text-muted-foreground lg:text-lg">
-            Can&#39;t find the answer you&#39;re looking for? Our support team
-            is here to help with any technical questions or concerns.
+            Ready to elevate your digital presence? Let&#39;s discuss how our
+            expertise can help you achieve your business goals.
           </p>
-          <ContactButton label="Contact Support" />
+          <ContactButton label="Work With Us" />
         </div>
       </div>
     </Section>

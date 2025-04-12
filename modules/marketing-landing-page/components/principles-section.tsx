@@ -11,8 +11,8 @@ export default function PrinciplesSection() {
   return (
     <Section id="principles">
       <PageHeader
-        title="Our Principles"
-        description="The core values that guide our work and shape our culture."
+        title="Working Philosophy"
+        description="Stay hungry, stay foolish. We combine technical excellence with strategic thinking to create digital solutions that drive real business outcomes."
       />
 
       <div className="flex items-center justify-center relative z-10 flex-wrap gap-1 md:gap-4">

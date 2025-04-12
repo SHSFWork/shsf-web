@@ -5,7 +5,7 @@ export default function OpenSourceBadge() {
   return (
     <Link
       title="View our open source code"
-      href="https://github.com/shsfwork/shsfwork-web"
+      href="https://github.com/shsfwork/shsf-web"
       className="inline-flex items-center gap-1.5 text-sm font-medium group/link"
       aria-label="View our open source code on GitHub"
     >

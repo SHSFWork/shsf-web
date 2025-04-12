@@ -12,45 +12,45 @@ import {
 export const PRINCIPLES = [
   /* MOCK CONTENT */
   {
-    title: "Accessibility-first mindset",
+    title: "Performance Optimization",
     description:
-      "We design with empathy. Every experience is crafted to be inclusive and accessible to all.",
+      "Fast-loading websites that keep users engaged and improve conversion rates through efficient code and modern optimization techniques.",
     icon: Heart,
   },
   {
-    title: "SEO as a foundation",
+    title: "Accessibility First",
     description:
-      "We build with discoverability in mind. Every detail is optimized for organic growth.",
+      "Creating inclusive digital experiences that work for everyone, regardless of ability or device, following WCAG standards.",
     icon: Search,
   },
   {
-    title: "Simplicity above all",
+    title: "Responsive Design",
     description:
-      "We believe the best solutions are simple, elegant, and focused. Complexity is a last resort.",
+      "Seamless experiences across all devices and screen sizes, ensuring your digital presence looks and functions perfectly everywhere.",
     icon: Minimize,
   },
   {
-    title: "Think different",
+    title: "SEO Implementation",
     description:
-      "We challenge conventions, break patterns, and craft experiences that feel truly original.",
+      "Building with search engines in mind from the ground up, with semantic HTML, optimized assets, and performance metrics that boost rankings.",
     icon: Zap,
   },
   {
-    title: "Obsessed with UX",
+    title: "User-Centered Approach",
     description:
-      "Every interaction matters. We design with clarity, delight, and user flow at the core.",
+      "Every decision guided by how it impacts the end user, creating intuitive interfaces that solve real problems.",
     icon: Smile,
   },
   {
-    title: "Design is not decoration",
+    title: "Modern Tech Stack",
     description:
-      "Visuals are strategic. We pay attention to layout, typography, and emotion behind every detail.",
+      "Leveraging the latest frameworks and tools while ensuring stability and future-proof solutions.",
     icon: Paintbrush,
   },
   {
-    title: "Details are not optional",
+    title: "Clean, Maintainable Code",
     description:
-      "The little things aren’t little. We obsess over margins, microcopy, and motion—the sauces to the main dish.",
+      "Writing code that's not just functional but sustainable, making future updates easier and more cost-effective.",
     icon: Sparkles,
   },
 ];
@@ -121,32 +121,32 @@ export const PRODUCTS = [
 export const FAQ_ITEMS = [
   {
     id: "faq-1",
-    question: "FAQ 1",
+    question: "What technologies do you specialize in?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "React, React Native, Next.js, TypeScript, and modern CSS frameworks with a focus on performance optimization and responsive design.",
   },
   {
     id: "faq-2",
-    question: "FAQ 2",
+    question: "What makes your approach different?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We blend technical expertise with business understanding to create solutions that look great and deliver measurable results.",
   },
   {
     id: "faq-3",
-    question: "FAQ 3",
+    question: "Do you offer maintenance and support?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Yes, we provide ongoing support packages to ensure your digital products remain secure, fast, and up-to-date.",
   },
   {
     id: "faq-4",
-    question: "FAQ 4",
+    question: "How do you handle project timelines?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "We use an agile approach with clear milestones, regular deliverables, and transparent communication throughout the project lifecycle.",
   },
   {
     id: "faq-5",
-    question: "FAQ 5",
+    question: "Can you work with my existing design team?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Absolutely. We seamlessly integrate with your current workflow and team structure.",
   },
 ];

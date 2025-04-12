@@ -10,8 +10,8 @@ export default function MarketingProductsPage() {
   return (
     <div>
       <PageHeader
-        title="Our Products"
-        description="Explore our innovative products designed to enhance your digital experience."
+        title="Featured Products"
+        description="A curated collection of websites, applications, and digital products built with modern frameworks and optimized for performance."
         className="mb-8"
       />
       <Section id="products">

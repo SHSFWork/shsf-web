@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@shsfwork/components/shadcn/button";
+import { Button } from "@shsfwork/components/custom/3d-button";
 import { Input } from "@shsfwork/components/shadcn/input";
 import { ChevronRight, LoaderCircle } from "lucide-react";
 import { cn } from "@shsfwork/lib/cn";
@@ -56,9 +56,9 @@ export function NewsletterSection() {
   };
 
   return (
-    <Section id="marketing-newsletter" className="max-w-xl">
+    <Section id="marketing-newsletter" className="max-w-xl py-8 md:py-12">
       <h4 className="mb-6 text-xl/[1.1] font-extrabold tracking-tight text-foreground md:text-2xl/[1.1]">
-        Get notified when new stuff drops.
+        Subscribe for Digital Insights
       </h4>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -74,6 +74,7 @@ export function NewsletterSection() {
                       id="subscribe-form"
                       placeholder="Your email"
                       type="email"
+                      className="h-10"
                       {...field}
                       disabled={isLoading}
                       aria-label="Subscribe to the newsletter"
@@ -85,8 +86,7 @@ export function NewsletterSection() {
             <Button
               type="submit"
               size="icon"
-              variant="secondary"
-              className="group relative shrink-0 cursor-pointer"
+              variant="ai"
               disabled={isLoading}
               data-loading={isLoading}
             >
