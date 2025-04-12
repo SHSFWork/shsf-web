@@ -1,10 +1,4 @@
-import { SITE, ONLINE } from "@shsfwork/constants/common";
-
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@shsfwork/components/shadcn/avatar";
+import { SITE } from "@shsfwork/constants/common";
 
 import Link from "@shsfwork/components/custom/link";
 import Logo from "@shsfwork/components/custom/logo";
@@ -41,9 +35,6 @@ export default function Footer() {
                 startups and businesses that convert visitors into customers.
               </Balancer>
             </p>
-            <div className="animate-appear opacity-0 delay-500">
-              <OpenSourceBadge />
-            </div>
             <div className="delay-500 opacity-0 animate-appear inline-block">
               <ThemeSwitcher />
             </div>
@@ -82,24 +73,10 @@ export default function Footer() {
         id="marketing-footer-socials"
         className="flex flex-col justify-between gap-6 md:flex-row md:items-center md:gap-2"
       >
-        <Link
-          title={ONLINE.github.title}
-          href={ONLINE.github.href}
-          className="flex items-center justify-start gap-2 text-sm text-muted-foreground hover:opacity-80 transition-all duration-200"
-        >
-          <span>Built with 🍕 by </span>
-          <Avatar className="rounded-md size-6 border">
-            <AvatarImage src="/logos/me.png" alt="@ozantekin" />
-            <AvatarFallback className="rounded-md text-xs">OT</AvatarFallback>
-          </Avatar>
-        </Link>
+        <OpenSourceBadge />
 
         <p className="text-sm text-muted-foreground">
-          &copy;{" "}
-          <Link title={SITE.title} href={SITE.href}>
-            {SITE.title}
-          </Link>
-          . All rights reserved. 2025-present.
+          &copy; 2025-present. All rights reserved.
         </p>
       </Container>
     </footer>
