@@ -1,5 +1,5 @@
 import Link from "@shsfwork/components/custom/link";
-import { Heart } from "lucide-react";
+import { Star } from "lucide-react";
 
 export default function OpenSourceBadge() {
   return (
@@ -12,11 +12,11 @@ export default function OpenSourceBadge() {
       <span className="text-muted-foreground group-hover/link:text-primary/70 transition-all">
         Open source
       </span>
-      <Heart
-        className="size-4 fill-rose-500 text-rose-600"
+      <Star
+        className="size-4 fill-amber-500 text-amber-500 group-hover/link:fill-amber-600 group-hover/link:text-amber-600 transition-all duration-300"
         strokeWidth={1.75}
       />
-      <span className="inline-flex transition-colors duration-300 text-xs text-rose-500 group-hover/link:text-rose-600">
+      <span className="inline-flex transition-colors duration-300 text-xs text-amber-500 group-hover/link:text-amber-600">
         Star on GitHub
       </span>
     </Link>

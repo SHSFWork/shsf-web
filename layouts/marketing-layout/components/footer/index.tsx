@@ -1,6 +1,3 @@
-import { SITE } from "@shsfwork/constants/common";
-
-import Link from "@shsfwork/components/custom/link";
 import Logo from "@shsfwork/components/custom/logo";
 import ThemeSwitcher from "@shsfwork/components/custom/theme-switcher";
 
