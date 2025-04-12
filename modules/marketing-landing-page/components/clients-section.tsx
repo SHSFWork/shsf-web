@@ -11,8 +11,8 @@ export default function ClientsSection() {
       />
 
       <div className="flex items-center justify-center gap-4 md:gap-16 md:mt-8 max-w-3xl mx-auto">
-        <AnimatedCircle value={10} altText="Businesses Transformed" />
-        <AnimatedCircle value={25} altText="Solutions Delivered" />
+        <AnimatedCircle value={10} altText="Businesses" />
+        <AnimatedCircle value={25} altText="Solutions" />
       </div>
     </Section>
   );
