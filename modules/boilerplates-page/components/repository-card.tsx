@@ -45,26 +45,24 @@ export default function RepositoryCard(data: GithubRepository) {
                 <Badge key={index}>{node.topic.name}</Badge>
               ))}
               {data.topics.nodes.length > 3 && (
-                <span className="text-xs text-gray-500">
-                  +{data.topics.nodes.length - 3}
-                </span>
+                <span className="text-xs">+{data.topics.nodes.length - 3}</span>
               )}
             </div>
           )}
 
           <div className="flex justify-between gap-4 flex-wrap items-center pt-6 border-t">
             <div className="flex items-center gap-3 flex-1 flex-wrap">
-              <div className="flex gap-0.5 items-center text-indigo-500">
+              <div className="flex gap-0.5 items-center">
                 <PackageOpen className="size-4" />
                 <span className="text-xs">open-source</span>
               </div>
               <div className="flex items-center gap-0.5">
-                <Star className="fill-amber-500 text-amber-500 size-4" />
+                <Star className="size-4" />
                 <span className="text-xs">{data.stargazerCount}</span>
               </div>
 
               <div className="flex gap-0.5 items-center">
-                <GitFork className="size-4 text-slate-500" />
+                <GitFork className="size-4" />
                 <span className="text-xs">{data.forkCount}</span>
               </div>
             </div>
