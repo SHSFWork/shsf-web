@@ -6,6 +6,7 @@ import { constructMetadata } from "@shsfwork/lib/constructMetadata";
 
 import { cn } from "@shsfwork/lib/cn";
 import NextThemesProvider from "@shsfwork/providers/next-themes-provider";
+import RootLayout from "@shsfwork/layouts/root-layout";
 
 import "@shsfwork/assets/styles/globals.css";
 
@@ -28,7 +29,9 @@ export default function Root({ children }: ChildrenType) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(geistSans.variable, geistMono.variable)}>
-        <NextThemesProvider>{children}</NextThemesProvider>
+        <NextThemesProvider>
+          <RootLayout>{children}</RootLayout>
+        </NextThemesProvider>
       </body>
     </html>
   );

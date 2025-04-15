@@ -18,7 +18,7 @@ export default function HeroSection() {
 
       <h1 className="text-5xl md:text-7xl text-center animate-appear opacity-0 delay-100 font-semibold">
         <Balancer id="hero-title">
-          Frontend Engineering & Digital Products
+          Product Engineering & Digital Products
         </Balancer>
       </h1>
 

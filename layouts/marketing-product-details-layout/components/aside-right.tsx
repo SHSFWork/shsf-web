@@ -5,7 +5,7 @@ import { allProducts } from "content-collections";
 import { getTocType, TocType } from "@shsfwork/lib/toc"; // TocType'ı import edin
 import Toc from "@shsfwork/components/mdx/toc";
 import BackButton from "@shsfwork/components/custom/back-button";
-import NewsletterBgEffect from "@shsfwork/layouts/marketing-layout/components/footer/components/newsletter-bg-effect";
+import NewsletterBgEffect from "@shsfwork/layouts/root-layout/components/footer/components/newsletter-bg-effect";
 import { NewsletterSection } from "@shsfwork/components/custom/newsletter";
 
 export default function AsideRight() {

@@ -47,7 +47,7 @@ const ProductSwapCard = React.forwardRef<HTMLDivElement, ProductSwapCardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          "w-full space-y-4 rounded-lg bg-accent p-4 border max-w-96 overflow-hidden",
+          "w-full space-y-4 rounded-lg p-4 border max-w-96 overflow-hidden",
           className
         )}
         initial={{ opacity: 0, y: 20 }}
@@ -142,7 +142,7 @@ const ProductSwapCard = React.forwardRef<HTMLDivElement, ProductSwapCardProps>(
 
         <div className="space-y-3">
           <div className="space-y-2">
-            <h2 className="line-clamp-1 font-medium">{product.title}</h2>
+            <h3 className="line-clamp-1 font-medium">{product.title}</h3>
             <Balancer
               id={`Product description for ${product.title}`}
               className="line-clamp-3 text-sm text-muted-foreground"

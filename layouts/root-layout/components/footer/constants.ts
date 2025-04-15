@@ -4,6 +4,7 @@ export const FOOTER_MARKETING_NAV = {
   website: [
     { href: "/", title: "Home" },
     { href: "/products", title: "Products" },
+    { href: "/boilerplates", title: "Boilerplates" },
   ],
   online: [{ href: "https://github.com/shsfwork", title: "GitHub" }],
   product: [
