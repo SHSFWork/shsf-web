@@ -16,9 +16,4 @@ export default async function Boilerplates() {
 export const metadata: Metadata = constructMetadata({
   title: "Boilerplates",
   description: "Explore and utilize starter templates for various projects.",
-  image: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
-    "Boilerplates"
-  )}&description=${encodeURI(
-    "Explore and utilize starter templates for various projects."
-  )}`,
 });

@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export function constructMetadata({
   title = `${SITE.title} - ${SITE.subtitle}`,
   description = SITE.description,
-  image = absoluteUrl("/og"),
+  image,
   ...props
 }: {
   title?: string;
@@ -13,6 +13,10 @@ export function constructMetadata({
   image?: string;
   [key: string]: Metadata[keyof Metadata];
 }): Metadata {
+  const defaultImage = absoluteUrl(
+    `/og?title=${encodeURI(title)}&description=${encodeURI(description)}`
+  );
+
   return {
     title,
     description,
@@ -45,7 +49,7 @@ export function constructMetadata({
       type: "website",
       images: [
         {
-          url: image,
+          url: image || defaultImage,
           width: 1200,
           height: 630,
           alt: title,
@@ -56,7 +60,7 @@ export function constructMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [image || defaultImage],
       creator: `@${ONLINE.bluesky.title}`,
     },
     icons: "/favicon.ico",

@@ -4,6 +4,7 @@ import Link from "@shsfwork/components/custom/link";
 import { Badge } from "@shsfwork/components/shadcn/badge";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import { Card, CardContent } from "@shsfwork/components/custom/3d-card";
+import isLightColor from "@shsfwork/lib/color";
 
 export default function RepositoryCard(data: GithubRepository) {
   return (
@@ -32,7 +33,12 @@ export default function RepositoryCard(data: GithubRepository) {
 
           {data.primaryLanguage && (
             <Badge
-              style={{ backgroundColor: data.primaryLanguage.color }}
+              style={{
+                backgroundColor: data.primaryLanguage.color,
+                color: isLightColor(data.primaryLanguage.color)
+                  ? "#000"
+                  : "#fff",
+              }}
               className="text-xs mb-3"
             >
               {data.primaryLanguage.name}
