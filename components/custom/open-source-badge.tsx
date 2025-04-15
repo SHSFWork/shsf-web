@@ -12,8 +12,8 @@ export default function OpenSourceBadge() {
       <span className="text-muted-foreground group-hover/link:text-primary/70 transition-all">
         Open source
       </span>
-      <Star className="size-4 fill-amber-500 text-amber-500 group-hover/link:fill-amber-600 group-hover/link:text-amber-600 transition-all duration-300" />
-      <span className="inline-flex transition-colors duration-300 text-xs text-amber-500 group-hover/link:text-amber-600">
+      <Star className="size-4 fill-amber-500 text-amber-500 dark:fill-amber-300 dark:text-amber-300 group-hover/link:fill-amber-600 group-hover/link:text-amber-600 transition-all duration-300" />
+      <span className="inline-flex transition-colors duration-300 text-xs text-amber-500 dark:text-amber-300 group-hover/link:text-amber-600 dark:group-hover/link:text-amber-400">
         Star on GitHub
       </span>
     </Link>

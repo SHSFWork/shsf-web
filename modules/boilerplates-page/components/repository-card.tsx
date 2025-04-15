@@ -51,19 +51,20 @@ export default function RepositoryCard(data: GithubRepository) {
           )}
 
           <div className="flex justify-between gap-4 flex-wrap items-center pt-6 border-t">
-            <div className="flex items-center gap-3 flex-1 flex-wrap">
-              <div className="flex gap-0.5 items-center">
-                <PackageOpen className="size-4" />
-                <span className="text-xs">open-source</span>
-              </div>
+            <div className="flex items-center gap-4 flex-1 flex-wrap">
               <div className="flex items-center gap-0.5">
-                <Star className="size-4" />
+                <Star className="size-4 fill-amber-500 text-amber-500 dark:fill-amber-300 dark:text-amber-300" />
                 <span className="text-xs">{data.stargazerCount}</span>
               </div>
 
               <div className="flex gap-0.5 items-center">
                 <GitFork className="size-4" />
                 <span className="text-xs">{data.forkCount}</span>
+              </div>
+
+              <div className="flex gap-0.5 items-center text-indigo-500 dark:text-indigo-300">
+                <PackageOpen className="size-4" />
+                <span className="text-xs">open-source</span>
               </div>
             </div>
 
