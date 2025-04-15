@@ -6,19 +6,20 @@ import RepositoryCard from "./components/repository-card";
 import PageHeader from "@shsfwork/components/custom/page-header";
 import Section from "@shsfwork/components/semantic-elements/section";
 
-export default function BoilerplatesPage(data: GithubOrganizationRepositories) {
+export default function StarterKitsPage(data: GithubOrganizationRepositories) {
   const filteredRepositories = data.organization.repositories.nodes.filter(
     (repo) =>
       repo.topics.nodes.some((node) =>
-        node.topic.name.toLowerCase().includes("boilerplate")
+        node.topic.name.toLowerCase().includes("starter-kit")
       )
   );
 
   return (
     <div>
       <PageHeader
-        title="Boilerplates"
-        description="Discover a collection of pre-configured boilerplates to speed up your development process."
+        title="Starter Kits"
+        description="Browse a selection of fully built starter kits designed to kickstart your projects.
+      "
         className="mb-8"
       />
 

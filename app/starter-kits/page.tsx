@@ -1,20 +1,20 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { constructMetadata } from "@shsfwork/lib/constructMetadata";
-import BoilerplatesPage from "@shsfwork/modules/boilerplates-page";
+import StarterKitsPage from "@shsfwork/modules/starter-kits-page";
 import { getOrganizationRepositories } from "@shsfwork/services/github/index";
 
-export default async function Boilerplates() {
+export default async function StarterKits() {
   // TODO: pagination
   const data = await getOrganizationRepositories();
 
   if (!data) return notFound();
 
-  return <BoilerplatesPage {...data} />;
+  return <StarterKitsPage {...data} />;
 }
 
 export const metadata: Metadata = constructMetadata({
-  title: "Boilerplates",
+  title: "Starter Kits",
   description:
-    "EDiscover a collection of pre-configured boilerplates to speed up your development process.",
+    "Browse a selection of fully built starter kits designed to kickstart your projects.",
 });

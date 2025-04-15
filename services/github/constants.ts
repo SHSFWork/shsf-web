@@ -1,4 +1,4 @@
-export const CACHE_DURATION = 60 * 60 * 2;
+export const CACHE_DURATION = 60 * 60 * 1.5;
 export const USE_MOCK = process.env.USE_MOCK_DATA_FOR_DEVELOPMENT === "true";
 
 export const DEFAULT_ORGANIZATION_REPOSITORIES: GithubOrganizationRepositories =

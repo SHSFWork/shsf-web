@@ -38,11 +38,7 @@ const cardVariants = cva("w-full relative", {
         "dark:shadow-[0px_4px_0px_0px_rgba(255,255,255,0.5)]",
         "bg-zinc-50 dark:bg-zinc-900/50",
       ],
-      corners: [
-        "border-2 rounded-md",
-        "border-zinc-100 dark:border-zinc-700",
-        "relative",
-      ],
+      corners: ["border-2 rounded-md", "relative"],
     },
   },
   defaultVariants: {
@@ -135,10 +131,10 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
     const CornerBorders = () => (
       <>
-        <div className="dark:border-zinc-200 border-zinc-700 size-6 absolute -top-0.5 -left-0.5 border-l-2 border-t-2 rounded-tl-md" />
-        <div className="dark:border-zinc-200 border-zinc-700 size-6 absolute -top-0.5 -right-0.5 border-r-2 border-t-2 rounded-tr-md" />
-        <div className="dark:border-zinc-200 border-zinc-700 size-6 absolute -bottom-0.5 -left-0.5 border-l-2 border-b-2 rounded-bl-md" />
-        <div className="dark:border-zinc-200 border-zinc-700 size-6 absolute -bottom-0.5 -right-0.5 border-r-2 border-b-2 rounded-br-md" />
+        <div className="border-foreground size-6 absolute -top-0.5 -left-0.5 border-l-2 border-t-2 rounded-tl-md" />
+        <div className="border-foreground size-6 absolute -top-0.5 -right-0.5 border-r-2 border-t-2 rounded-tr-md" />
+        <div className="border-foreground size-6 absolute -bottom-0.5 -left-0.5 border-l-2 border-b-2 rounded-bl-md" />
+        <div className="border-foreground size-6 absolute -bottom-0.5 -right-0.5 border-r-2 border-b-2 rounded-br-md" />
       </>
     );
 
