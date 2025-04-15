@@ -1,6 +1,6 @@
 import { allProducts } from "@shsfwork/.content-collections/generated";
 
-export const FOOTER_MARKETING_NAV = {
+export const FOOTER__NAV = {
   website: [
     { href: "/", title: "Home" },
     { href: "/products", title: "Products" },

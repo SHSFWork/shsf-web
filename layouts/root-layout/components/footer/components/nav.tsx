@@ -3,11 +3,11 @@ import * as React from "react";
 import { cn } from "@shsfwork/lib/cn";
 import Link from "@shsfwork/components/custom/link";
 
-import { FOOTER_MARKETING_NAV } from "../constants";
+import { FOOTER__NAV } from "../constants";
 
 type FooterNavProps = {
   id: string;
-  items?: (typeof FOOTER_MARKETING_NAV)[keyof typeof FOOTER_MARKETING_NAV];
+  items?: (typeof FOOTER__NAV)[keyof typeof FOOTER__NAV];
 } & React.ComponentProps<"nav">;
 
 export default function FooterNav(props: FooterNavProps) {

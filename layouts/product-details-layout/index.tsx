@@ -1,8 +1,6 @@
 import AsideRight from "./components/aside-right";
 
-export default function MarketingProductDetailsLayout({
-  children,
-}: ChildrenType) {
+export default function ProductDetailsLayout({ children }: ChildrenType) {
   return (
     <div className="grid md:gap-4 md:grid-cols-[1.5fr_0.5fr]">
       <section className="md:flex gap-4">

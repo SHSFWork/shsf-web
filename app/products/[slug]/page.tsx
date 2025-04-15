@@ -2,20 +2,18 @@ import { notFound } from "next/navigation";
 
 import { allProducts } from "@shsfwork/.content-collections/generated";
 
-import ProductDetailPage from "@shsfwork/modules/marketing-product-detail-page";
+import ProductDetailPage from "@shsfwork/modules/product-detail-page";
 import { Metadata } from "next";
 import { absoluteUrl } from "@shsfwork/lib/absoluteUrl";
 import { SITE } from "@shsfwork/constants/common";
 
-type MarketingProductDetailsProps = {
+type ProductDetailsProps = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-export default async function MarketingProductDetails({
-  params,
-}: MarketingProductDetailsProps) {
+export default async function ProductDetails({ params }: ProductDetailsProps) {
   const resolvedParams = await params;
   const product = allProducts.find((p) => p._meta.path === resolvedParams.slug);
   if (!product) {
@@ -27,7 +25,7 @@ export default async function MarketingProductDetails({
 
 export async function generateMetadata({
   params,
-}: MarketingProductDetailsProps): Promise<Metadata> {
+}: ProductDetailsProps): Promise<Metadata> {
   const resolvedParams = await params;
   const product = allProducts.find((p) => p._meta.path === resolvedParams.slug);
 

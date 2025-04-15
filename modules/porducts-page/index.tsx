@@ -3,10 +3,10 @@ import { allProducts } from "@shsfwork/.content-collections/generated";
 import PageHeader from "@shsfwork/components/custom/page-header";
 
 import ProductSwapCard from "./components/product-swap-card";
-import { MarketingProductsSchema } from "./components/jsonLd";
+import { ProductsSchema } from "./components/jsonLd";
 import Section from "@shsfwork/components/semantic-elements/section";
 
-export default function MarketingProductsPage() {
+export default function ProductsPage() {
   return (
     <div>
       <PageHeader
@@ -26,7 +26,7 @@ export default function MarketingProductsPage() {
         </ul>
       </Section>
 
-      <MarketingProductsSchema />
+      <ProductsSchema />
     </div>
   );
 }

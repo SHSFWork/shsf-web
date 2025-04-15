@@ -22,17 +22,15 @@ const product: Blog = {
   author,
 };
 
-export function MarketingProductsSchema() {
+export function ProductsSchema() {
   return <JsonLdSchema schema={product} />;
 }
 
-type MarketingProductDetailsSchemaProps = {
+type ProductDetailsSchemaProps = {
   product: Product;
 };
 
-export function MarketingProductDetailsSchema({
-  product,
-}: MarketingProductDetailsSchemaProps) {
+export function ProductDetailsSchema({ product }: ProductDetailsSchemaProps) {
   const url = absoluteUrl(product.url);
   const schema: BlogPosting = {
     "@type": "BlogPosting",

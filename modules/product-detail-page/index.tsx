@@ -5,20 +5,20 @@ import Image from "next/image";
 import Markdown from "@shsfwork/components/mdx/markdown";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import NavigationButton from "./components/navigation-button";
-import { MarketingProductDetailsSchema } from "@shsfwork/modules/marketing-porducts-page/components/jsonLd";
+import { ProductDetailsSchema } from "@shsfwork/modules/porducts-page/components/jsonLd";
 
 import { createPrevAndNext } from "./lib";
 import DateTime from "../../components/custom/date-time";
 import ScrollToTop from "./components/scroll-to-top";
 import ColophonItem from "./components/colophon";
 
-type MarketingProductDetailsPageProps = {
+type ProductDetailsPageProps = {
   product: Product;
 };
 
-export default function MarketingProductDetailsPage({
+export default function ProductDetailsPage({
   product,
-}: MarketingProductDetailsPageProps) {
+}: ProductDetailsPageProps) {
   const { next, prev } = createPrevAndNext(product);
 
   return (
@@ -79,7 +79,7 @@ export default function MarketingProductDetailsPage({
         <NavigationButton type="next" product={next} />
       </nav>
 
-      <MarketingProductDetailsSchema product={product} />
+      <ProductDetailsSchema product={product} />
     </>
   );
 }

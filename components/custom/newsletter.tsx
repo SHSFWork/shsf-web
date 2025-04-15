@@ -56,7 +56,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <Section id="marketing-newsletter" className="max-w-xl py-8 md:py-12">
+    <Section id="newsletter" className="max-w-xl py-8 md:py-12">
       <h4 className="mb-6 text-xl/[1.1] font-extrabold tracking-tight text-foreground md:text-2xl/[1.1]">
         Subscribe for Digital Insights
       </h4>

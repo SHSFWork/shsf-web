@@ -8,26 +8,24 @@ import FooterNav from "./components/nav";
 import { NewsletterSection } from "../../../../components/custom/newsletter";
 import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
-import { FOOTER_MARKETING_NAV } from "./constants";
+import { FOOTER__NAV } from "./constants";
 import OpenSourceBadge from "@shsfwork/components/custom/open-source-badge";
 
 export default function Footer() {
   return (
     <footer>
       <Container
-        id="marketing-footer-container"
+        id="footer-container"
         className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr_0.5fr]"
       >
         <div className="space-y-6">
           <Logo isText={false} className="animate-appear opacity-0" />
           <div className="space-y-4">
             <h1 className="text-xl animate-appear opacity-0 delay-100 font-semibold">
-              <Balancer id="marketing-footer-title">
-                Stay Hungry, Stay Foolish
-              </Balancer>
+              <Balancer id="footer-title">Stay Hungry, Stay Foolish</Balancer>
             </h1>
             <p className="animate-appear opacity-0 delay-300">
-              <Balancer id="marketing-footer-description">
+              <Balancer id="footer-description">
                 Crafting fast, responsive, and user-centric web experiences for
                 startups and businesses that convert visitors into customers.
               </Balancer>
@@ -40,26 +38,20 @@ export default function Footer() {
 
         <div className="space-y-2">
           <h5>Sitemap</h5>
-          <FooterNav items={FOOTER_MARKETING_NAV.website} id="footer-nav" />
+          <FooterNav items={FOOTER__NAV.website} id="footer-nav" />
         </div>
         <div className="space-y-2">
           <h5>Featured Products</h5>
-          <FooterNav
-            items={FOOTER_MARKETING_NAV.product}
-            id="footer-nav-product"
-          />
+          <FooterNav items={FOOTER__NAV.product} id="footer-nav-product" />
         </div>
         <div className="space-y-2">
           <h5>Online</h5>
-          <FooterNav
-            items={FOOTER_MARKETING_NAV.online}
-            id="footer-nav-legal"
-          />
+          <FooterNav items={FOOTER__NAV.online} id="footer-nav-legal" />
         </div>
       </Container>
 
       <Container
-        id="marketing-footer-newsletter"
+        id="footer-newsletter"
         className="relative overflow-hidden bg-accent lg:rounded-xl"
       >
         <NewsletterSection />
@@ -67,7 +59,7 @@ export default function Footer() {
       </Container>
 
       <Container
-        id="marketing-footer-socials"
+        id="footer-socials"
         className="flex flex-col justify-between gap-6 md:flex-row md:items-center md:gap-2"
       >
         <OpenSourceBadge />

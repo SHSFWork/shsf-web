@@ -5,7 +5,7 @@ import WallOfLoveSection from "./components/wall-of-love-section";
 import ClientsSection from "./components/clients-section";
 import FaqsSection from "./components/faqs-section";
 
-export default function MarketingLandingPage() {
+export default function LandingPage() {
   return (
     <>
       <HeroSection />
