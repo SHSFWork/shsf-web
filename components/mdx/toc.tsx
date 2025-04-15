@@ -39,8 +39,6 @@ export default function Toc({ toc }: TocProps) {
     [refinedToc]
   ) as string[];
 
-  console.log("refinedToc", refinedToc);
-
   const activeHeading = useActiveItem(itemIds);
   const mounted = useMounted();
 

@@ -7,26 +7,34 @@ import { Card, CardContent } from "@shsfwork/components/custom/3d-card";
 import isLightColor from "@shsfwork/lib/color";
 
 export default function RepositoryCard(data: GithubRepository) {
+  const title = data.name.replaceAll("-", " ");
+
   return (
     <Card variant="plus" className="hover:border-solid">
       <CardContent>
         <Link
-          title={`Go to ${data.name} GitHub page`}
+          title={`Go to ${title} GitHub page`}
           href={data.url}
           className="p-6 inline-block"
         >
           <div className="flex justify-between items-start mb-2">
-            <h3 className="font-bold text-lg truncate">
-              <Balancer id={`Repository name for ${data.name}`}>
-                {data.name}
+            <h3 className="font-bold text-lg capitalize">
+              <Balancer
+                id={`Repository name for ${title}`}
+                className="line-clamp-3"
+              >
+                {title}
               </Balancer>
             </h3>
 
             {data.isArchived && <Badge variant="secondary">Archived</Badge>}
           </div>
 
-          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-            <Balancer id={`Repository description for ${data.name}`}>
+          <p className="text-muted-foreground text-sm mb-4">
+            <Balancer
+              id={`Repository description for ${title}`}
+              className="line-clamp-4"
+            >
               {data.description || "Bu repo için açıklama bulunmuyor."}
             </Balancer>
           </p>
