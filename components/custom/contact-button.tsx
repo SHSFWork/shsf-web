@@ -6,7 +6,7 @@ import {
   TooltipTrigger,
 } from "@shsfwork/components/shadcn/tooltip";
 import { Button } from "@shsfwork/components/custom/3d-button";
-import { EmailCopyButton } from "./email-button";
+import { EmailCopyButton } from "../../modules/landing-page/components/email-button";
 import Link from "@shsfwork/components/custom/link";
 
 type ContactButtonProps = {

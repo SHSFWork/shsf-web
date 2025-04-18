@@ -6,11 +6,7 @@ import { Plus } from "lucide-react";
 const cardVariants = cva("w-full relative", {
   variants: {
     variant: {
-      default: [
-        "border rounded-lg",
-        "border-zinc-200 dark:border-zinc-800",
-        "bg-white dark:bg-zinc-950",
-      ],
+      default: ["border rounded-lg", "bg-background"],
       dots: [
         "relative mx-auto w-full",
         "rounded-lg border border-dashed",
@@ -21,22 +17,17 @@ const cardVariants = cva("w-full relative", {
       plus: ["border border-dashed", "relative"],
       neubrutalism: [
         "border-[0.5px]",
-        "border-zinc-400 dark:border-white/70",
         "relative",
-        "shadow-[4px_4px_0px_0px_rgba(0,0,0)]",
-        "dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.7)]",
+        "shadow-[4px_4px_0px_0px_theme(colors.border)]",
       ],
       inner: [
-        "border-[0.5px] rounded-sm p-2",
+        "border-[0.5px] rounded-lg p-2",
         "border-zinc-300 dark:border-zinc-800",
       ],
       lifted: [
         "border rounded-xl",
-        "border-zinc-400 dark:border-zinc-700",
         "relative",
-        "shadow-[0px_5px_0px_0px_rgba(0,0,0,0.7)]",
-        "dark:shadow-[0px_4px_0px_0px_rgba(255,255,255,0.5)]",
-        "bg-zinc-50 dark:bg-zinc-900/50",
+        "shadow-[0px_5px_0px_0px_theme(colors.border)]",
       ],
       corners: ["border-2 rounded-md", "relative"],
     },
@@ -167,15 +158,15 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           className={cn(cardVariants({ variant, className }))}
           {...props}
         >
-          <div className="absolute left-0 top-4 -z-0 h-px w-full bg-zinc-400 dark:bg-zinc-700 sm:top-6 md:top-8" />
-          <div className="absolute bottom-4 left-0 z-0 h-px w-full bg-zinc-400 dark:bg-zinc-700 sm:bottom-6 md:bottom-8" />
-          <div className="relative w-full border-x border-zinc-400 dark:border-zinc-700">
+          <div className="absolute left-0 top-4 -z-0 h-px w-full bg-border sm:top-6 md:top-8" />
+          <div className="absolute bottom-4 left-0 z-0 h-px w-full bg-border sm:bottom-6 md:bottom-8" />
+          <div className="relative w-full border-x ">
             <div className="absolute z-0 grid h-full w-full items-center">
               <section className="absolute z-0 grid h-full w-full grid-cols-2 place-content-between">
-                <div className="rounded-full outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-indigo-400 -translate-x-[2.5px]" />
-                <div className="rounded-full outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-indigo-400 translate-x-[2.5px] place-self-end" />
-                <div className="rounded-full outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-indigo-400 -translate-x-[2.5px]" />
-                <div className="rounded-full outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-indigo-400 translate-x-[2.5px] place-self-end" />
+                <div className="rounded-full outline-8 sm:my-6 md:my-8 size-1 my-4 outline-border bg-foreground -translate-x-[2.5px]" />
+                <div className="rounded-full outline-8 sm:my-6 md:my-8 size-1 my-4 outline-border bg-foreground translate-x-[2.5px] place-self-end" />
+                <div className="rounded-full outline-8 sm:my-6 md:my-8 size-1 my-4 outline-border bg-foreground -translate-x-[2.5px]" />
+                <div className="rounded-full outline-8 sm:my-6 md:my-8 size-1 my-4 outline-border bg-foreground translate-x-[2.5px] place-self-end" />
               </section>
             </div>
             <div className="relative z-20 mx-auto py-8">{content}</div>
@@ -191,7 +182,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           className={cn(cardVariants({ variant, className }))}
           {...props}
         >
-          <div className="border rounded-sm bg-gradient-to-br from-white to-zinc-200/60 border-zinc-300 shadow-[2px_0_8px_rgba(0,_0,_0,_0.15)] dark:from-zinc-950 dark:to-zinc-900/60 dark:border-zinc-900/50 dark:shadow-inner">
+          <div className="border rounded-lg bg-gradient-to-br from-white to-zinc-200/60 border-zinc-300 shadow-sm dark:from-zinc-950 dark:to-zinc-900/60 dark:border-zinc-900/50 size-full">
             {content}
           </div>
         </div>

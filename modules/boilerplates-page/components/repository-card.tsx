@@ -10,7 +10,7 @@ export default function RepositoryCard(data: GithubRepository) {
   const title = data.name.replaceAll("-", " ");
 
   return (
-    <Card variant="plus" className="hover:border-solid">
+    <Card variant="plus" className="hover:border-solid max-w-xl">
       <CardContent>
         <Link
           title={`Go to ${title} GitHub page`}

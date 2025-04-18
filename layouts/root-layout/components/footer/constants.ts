@@ -3,6 +3,7 @@ import { allProducts } from "@shsfwork/.content-collections/generated";
 export const FOOTER__NAV = {
   website: [
     { href: "/", title: "Home" },
+    { href: "/services", title: "Services" },
     { href: "/products", title: "Products" },
     { href: "/boilerplates", title: "Boilerplates" },
     { href: "/starter-kits", title: "Starter Kits" },

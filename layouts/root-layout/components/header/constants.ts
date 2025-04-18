@@ -4,6 +4,7 @@ import { Home } from "lucide-react";
 
 export const HEADER_NAV: HeaderMenuItemProps[] = [
   { title: "Home", url: "/" },
+  { title: "Services", url: "/services" },
   {
     title: "Products",
     url: "#",

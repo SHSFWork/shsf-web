@@ -12,7 +12,7 @@ export default function RepositoryCard(data: GithubRepository) {
   return (
     <Card
       variant="corners"
-      className="hover:border-foreground transition-all duration-500"
+      className="hover:border-transparent transition-all duration-500 max-w-xl"
     >
       <CardContent>
         <Link

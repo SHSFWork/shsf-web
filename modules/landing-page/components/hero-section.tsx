@@ -1,12 +1,9 @@
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import Section from "@shsfwork/components/semantic-elements/section";
-import { ONLINE, SITE } from "@shsfwork/constants/common";
+import { SITE } from "@shsfwork/constants/common";
 
-import { Button } from "@shsfwork/components/custom/3d-button";
-
-import Link from "@shsfwork/components/custom/link";
-import { ChevronRight } from "lucide-react";
-import ContactButton from "./contact-button";
+import ContactButton from "../../../components/custom/contact-button";
+import MeetingButton from "@shsfwork/components/custom/meeting-button";
 
 export default function HeroSection() {
   return (
@@ -31,19 +28,7 @@ export default function HeroSection() {
 
       <div className="flex items-center justify-center animate-appear opacity-0 delay-500 gap-4 flex-wrap">
         <ContactButton />
-        <Button variant="outline" size="lg" asChild className="group">
-          <Link
-            title={ONLINE.cal.title}
-            className="flex items-center gap-1"
-            href={ONLINE.cal.href}
-          >
-            <span>Plan a Meeting</span>
-            <ChevronRight
-              className="transition-transform group-hover:translate-x-1 duration-300"
-              size={16}
-            />
-          </Link>
-        </Button>
+        <MeetingButton />
       </div>
     </Section>
   );

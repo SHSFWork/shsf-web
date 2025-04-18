@@ -13,7 +13,9 @@ type LinkProps = {
 export default function Link(props: LinkProps) {
   const { href, title, className, ...rest } = props;
 
-  if (isExternalLink(href)) {
+  const isMailto = href.startsWith("mailto:");
+
+  if (isExternalLink(href) && !isMailto) {
     return (
       <a
         title={title}

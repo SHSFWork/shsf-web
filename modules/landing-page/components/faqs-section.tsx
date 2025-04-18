@@ -12,7 +12,7 @@ import {
   AvatarImage,
 } from "@shsfwork/components/shadcn/avatar";
 
-import ContactButton from "./contact-button";
+import ContactButton from "../../../components/custom/contact-button";
 import { FAQ_ITEMS } from "../constants";
 
 export default function FaqsSection() {
