@@ -7,7 +7,7 @@ export default function Products() {
 }
 
 export const metadata: Metadata = constructMetadata({
-  title: "Featured Products",
+  title: "Products",
   description:
     "A curated collection of websites, applications, and digital products built with modern frameworks and optimized for performance.",
 });

@@ -10,7 +10,7 @@ export default function ProductsPage() {
   return (
     <div>
       <PageHeader
-        title="Featured Products"
+        title="Products"
         description="A curated collection of websites, applications, and digital products built with modern frameworks and optimized for performance."
         className="mb-8"
       />
