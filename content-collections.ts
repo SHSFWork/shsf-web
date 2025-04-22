@@ -135,7 +135,7 @@ const products = defineCollection({
       readingTime: calculateReadingTime(product.content),
       lastModification,
       image,
-      og: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
+      og: `${process.env.NEXT_PUBLIC_APP_URL}/products/og?title=${encodeURI(
         product.title
       )}&description=${encodeURI(product.excerpt)}`,
       slugAsParams: product._meta.path.split("/").slice(1).join("/"),
