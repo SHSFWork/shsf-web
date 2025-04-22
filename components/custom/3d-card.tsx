@@ -10,7 +10,6 @@ const cardVariants = cva("w-full relative", {
       dots: [
         "relative mx-auto w-full",
         "rounded-lg border border-dashed",
-        "border-zinc-300 dark:border-zinc-800",
         "px-4 sm:px-6 md:px-8",
       ],
       gradient: ["relative mx-auto w-full", "px-4 sm:px-6 md:px-8"],
@@ -20,12 +19,9 @@ const cardVariants = cva("w-full relative", {
         "relative",
         "shadow-[4px_4px_0px_0px_theme(colors.border)]",
       ],
-      inner: [
-        "border-[0.5px] rounded-lg p-2",
-        "border-zinc-300 dark:border-zinc-800",
-      ],
+      inner: ["border-[0.5px] rounded-lg p-2"],
       lifted: [
-        "border rounded-xl",
+        "border  rounded-xl",
         "relative",
         "shadow-[0px_5px_0px_0px_theme(colors.border)]",
       ],
@@ -58,7 +54,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, title, description, children, ...props }, ref) => {
     const DotsPattern = () => {
       const sharedClasses =
-        "rounded-full outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-indigo-400";
+        "rounded-full outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-bone-400";
 
       return (
         <>
@@ -182,7 +178,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           className={cn(cardVariants({ variant, className }))}
           {...props}
         >
-          <div className="border rounded-lg bg-gradient-to-br from-white to-zinc-200/60 border-zinc-300 shadow-sm dark:from-zinc-950 dark:to-zinc-900/60 dark:border-zinc-900/50 size-full">
+          <div className="border rounded-lg bg-gradient-to-br from-accent via-background to-accent shadow size-full">
             {content}
           </div>
         </div>

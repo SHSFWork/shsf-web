@@ -20,7 +20,7 @@ export default function ProductsSection() {
         <DisplayCards />
       </div>
       <div className="flex flex-col items-center justify-center">
-        <Button variant="ai" size="lg" className="group" asChild>
+        <Button size="lg" className="group" asChild>
           <Link
             title="Explore more"
             href="/products"

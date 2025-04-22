@@ -21,7 +21,7 @@ export default function NotFoundPage() {
       <div className="mt-6 flex items-center justify-center flex-wrap gap-4  animate-appear opacity-0 delay-500">
         <BackButton />
 
-        <Link href="/" className={buttonVariants({ variant: "ai" })}>
+        <Link href="/" className={buttonVariants({ variant: "bone" })}>
           Go to home
         </Link>
       </div>

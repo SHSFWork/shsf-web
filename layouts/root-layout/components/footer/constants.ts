@@ -8,7 +8,11 @@ export const FOOTER__NAV = {
     { href: "/boilerplates", title: "Boilerplates" },
     { href: "/starter-kits", title: "Starter Kits" },
   ],
-  online: [{ href: "https://github.com/shsfwork", title: "GitHub" }],
+  online: [
+    { href: "https://github.com/shsfwork", title: "GitHub" },
+    { href: "https://medium.com/shsfwork", title: "Medium" },
+    { href: "https://www.linkedin.com/company/shsf-work", title: "LinkedIn" },
+  ],
   product: [
     ...allProducts.map((product) => ({
       title: product.title,

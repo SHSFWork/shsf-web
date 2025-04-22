@@ -8,8 +8,8 @@ export function constructMetadata({
   image,
   ...props
 }: {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   image?: string;
   [key: string]: Metadata[keyof Metadata];
 }): Metadata {

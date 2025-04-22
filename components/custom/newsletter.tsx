@@ -86,7 +86,6 @@ export function NewsletterSection() {
             <Button
               type="submit"
               size="icon"
-              variant="ai"
               disabled={isLoading}
               data-loading={isLoading}
             >

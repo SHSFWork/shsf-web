@@ -34,14 +34,12 @@ function Principle(props: PrincipleProps) {
   const { title, description, icon: Icon } = props;
 
   return (
-    <div className="flex flex-col py-8 md:py-10 relative group/principle w-full max-w-80 rounded-b-2xl overflow-hidden">
-      <div className="opacity-0 group-hover/principle:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-sidebar to-transparent pointer-events-none" />
-
+    <div className="flex flex-col py-8 md:py-10 relative group/principle w-full max-w-80 rounded-2xl overflow-hidden hover:bg-accent transition-all duration-300">
       <div className="mb-4 relative z-10 px-10 text-primary">
         <Icon />
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/principle:h-8 w-1 rounded-tr-full rounded-br-full bg-muted group-hover/principle:bg-primary transition-all duration-200 origin-center" />
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/principle:h-8 w-1 rounded-tr-full rounded-br-full bg-muted group-hover/principle:bg-primary transition-all duration-300 origin-center" />
         <h3 className="group-hover/principle:translate-x-2 transition duration-200 inline-block">
           <Balancer id="principle-title">{title}</Balancer>
         </h3>

@@ -20,7 +20,7 @@ export default function ContactButton({
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="ai" size="lg" className="px-16" asChild>
+          <Button size="lg" className="px-16" asChild>
             <Link
               title={ONLINE.contact.title}
               href={ONLINE.contact.href + "?subject=Hello!"}
@@ -31,7 +31,7 @@ export default function ContactButton({
         </TooltipTrigger>
         <TooltipContent
           sideOffset={4}
-          className="bg-indigo-500 text-white shadow-md dark:bg-indigo-700"
+          className="bg-bone-600 text-white shadow-md dark:bg-bone-700"
         >
           <EmailCopyButton />
         </TooltipContent>

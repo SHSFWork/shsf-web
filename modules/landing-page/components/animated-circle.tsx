@@ -20,7 +20,7 @@ export interface AnimatedCircleProps
     | "warning"
     | "success"
     | "info"
-    | "indigo"
+    | "bone"
     | string
     | { [key: number]: string };
   secondary?:
@@ -28,7 +28,7 @@ export interface AnimatedCircleProps
     | "warning"
     | "success"
     | "info"
-    | "indigo"
+    | "bone"
     | string
     | { [key: number]: string };
 
@@ -58,7 +58,7 @@ export default function AnimatedCircle({
   animated = true,
   altText = "Animated Circle",
 
-  primary = "indigo",
+  primary = "bone",
   secondary,
 
   transition = {
@@ -211,7 +211,7 @@ export default function AnimatedCircle({
 
   const primaryStroke = () => {
     if (!primary) {
-      return "#6366f1"; // Default is now indigo
+      return "#c9b3a4"; // Default is now bone
     } else if (typeof primary === "string") {
       return primary === "danger"
         ? "#dc2626" // Red
@@ -221,8 +221,8 @@ export default function AnimatedCircle({
         ? "#3b82f6" // Blue
         : primary === "success"
         ? "#22c55e" // Green
-        : primary === "indigo"
-        ? "#6366f1" // Indigo
+        : primary === "bone"
+        ? "#c9b3a4" // Indigo
         : primary;
     } else if (typeof primary === "object") {
       const primaryKeys = Object.keys(primary).sort(
@@ -240,7 +240,7 @@ export default function AnimatedCircle({
           primaryStroke = primary[currentKey] || "";
 
           if (
-            ["danger", "warning", "success", "info", "indigo"].includes(
+            ["danger", "warning", "success", "info", "bone"].includes(
               primaryStroke
             )
           ) {
@@ -250,7 +250,7 @@ export default function AnimatedCircle({
                 warning: "#f59e0b",
                 info: "#3b82f6",
                 success: "#22c55e",
-                indigo: "#6366f1",
+                bone: "#c9b3a4",
               }[primaryStroke] || primaryStroke;
           }
 
@@ -273,8 +273,8 @@ export default function AnimatedCircle({
         ? "#bfdbfe" // Light Blue
         : secondary === "success"
         ? "#bbf7d0" // Light Green
-        : secondary === "indigo"
-        ? "#c7d2fe" // Light Indigo
+        : secondary === "bone"
+        ? "#f2e9e2" // Light Indigo
         : secondary;
     } else if (typeof secondary === "object") {
       const stroke_percent_secondary = 100 - strokePercent;
@@ -294,7 +294,7 @@ export default function AnimatedCircle({
           secondaryStroke = secondary[currentKey] || "";
 
           if (
-            ["danger", "warning", "success", "info", "indigo"].includes(
+            ["danger", "warning", "success", "info", "bone"].includes(
               secondaryStroke
             )
           ) {
@@ -304,7 +304,7 @@ export default function AnimatedCircle({
                 warning: "#fde68a",
                 info: "#bfdbfe",
                 success: "#bbf7d0",
-                indigo: "#c7d2fe",
+                bone: "#f2e9e2",
               }[secondaryStroke] || secondaryStroke;
           }
 

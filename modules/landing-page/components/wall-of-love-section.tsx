@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
-import { Globe } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import Section from "@shsfwork/components/semantic-elements/section";
@@ -28,30 +25,11 @@ export default function WallOfLoveSection() {
             <MagicCard
               className="whitespace-nowrap p-6 overflow-hidden max-w-xs"
               gradientColor={theme === "dark" ? "#262626" : "#ffffff"}
-              gradientFrom={post.platform === "bluesky" ? "#0B7AFF" : "#f97316"}
-              gradientTo={post.platform === "bluesky" ? "#59B9FF" : "#facc15"}
+              gradientFrom={post.platform === "bluesky" ? "#525654" : "#cfd3d1"}
+              gradientTo={post.platform === "bluesky" ? "#86776d" : "#e9d8cc"}
             >
               <div className="flex justify-between items-center gap-4">
                 <h4 className="font-bold">{post.author}</h4>
-
-                {post.platform === "bluesky" && (
-                  <figure className="aspect-square size-8">
-                    <Image
-                      className="bg-cover bg-center bg-no-repeat object-cover"
-                      src="/badges/bluesky-logo-gradient.png"
-                      alt="Bluesky Logo"
-                      width={32}
-                      height={32}
-                      draggable={false}
-                    />
-                  </figure>
-                )}
-
-                {post.platform === "web" && (
-                  <span className="bg-orange-500 size-8 rounded-xl flex items-center justify-center text-white">
-                    <Globe size={18} />
-                  </span>
-                )}
               </div>
               <div className="space-y-3">
                 <p className="text-sm">

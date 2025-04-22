@@ -16,5 +16,5 @@ export default async function Boilerplates() {
 export const metadata: Metadata = constructMetadata({
   title: "Boilerplates",
   description:
-    "EDiscover a collection of pre-configured boilerplates to speed up your development process.",
+    "Discover a collection of pre-configured boilerplates to speed up your development process.",
 });

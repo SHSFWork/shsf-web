@@ -69,13 +69,13 @@ export async function GET(request: Request) {
     const logoBase64 = getLogo();
 
     const colors = {
-      bg: "#f3f4f6", // Açık gri arka plan
-      text: "#312e81", // Ana metin rengi
-      secondaryText: "#6b7280", // İkincil metin rengi
-      accent: "#581c87", // Vurgu rengi
-      border: "#d1d5db", // Sınır rengi
+      bg: "#fcf9f8",
+      text: "#25201c",
+      secondaryText: "#7b695c",
+      accent: "#4a3f37",
+      border: "#f2e9e2",
       gradient:
-        "linear-gradient(to right, rgba(81, 46, 129, 0.2), rgba(88, 28, 135, 0.4))", // Gradient
+        "linear-gradient(to right, rgba(134, 78, 38, 0.2), rgba(116, 63, 20, 0.4))",
     };
 
     return new ImageResponse(
@@ -118,113 +118,37 @@ export async function GET(request: Request) {
             }}
           />
 
-          <div
-            style={{
-              position: "absolute",
-              inset: "24px",
-              border: `1px solid ${colors.border}`,
-              borderRadius: "12px",
-              zIndex: 2,
-            }}
-          />
-
-          <div tw="flex flex-col absolute justify-center items-center inset-0 p-20 w-full h-full z-10">
-            {title || description ? (
-              <div tw="flex flex-col items-center justify-center text-center w-full h-full">
-                {logoBase64 && (
-                  <div tw="mb-8 flex items-center absolute left-0 top-0">
-                    <img
-                      src={logoBase64}
-                      width={60}
-                      height={60}
-                      alt={SITE.title}
-                      tw="rounded-xl shadow-lg"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <div
-                      tw="ml-4 text-3xl font-semibold tracking-tight"
-                      style={{
-                        maxWidth: "900px",
-                        backgroundImage: `linear-gradient(90deg, #312e81 0%, #581c87 100%)`,
-                        backgroundClip: "text",
-                        color: "transparent",
-                      }}
-                    >
-                      {SITE.title}
-                    </div>
-                  </div>
-                )}
-                <div tw="tracking-tight flex flex-col justify-center text-balance font-semibold text-[80px] max-w-4xl">
-                  {title}
-                </div>
-                {description && (
-                  <div
-                    tw="text-[32px] mt-6 text-balance font-normal max-w-3xl"
-                    style={{ color: colors.secondaryText }}
-                  >
-                    {description}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div tw="flex flex-col items-center justify-center text-center w-full h-full">
-                <div tw="flex items-center mb-6">
-                  {logoBase64 && (
-                    <img
-                      src={logoBase64}
-                      width={70}
-                      height={70}
-                      alt={SITE.title}
-                      tw="rounded-xl shadow-lg"
-                      style={{ objectFit: "cover" }}
-                    />
-                  )}
-                  <div
-                    tw="ml-4 text-3xl font-semibold tracking-tight"
-                    style={{ color: colors.accent }}
-                  >
-                    {SITE.title}
-                  </div>
-                </div>
-                <div tw="flex text-[72px] font-semibold tracking-tight text-balance max-w-4xl">
-                  Motion-First UI Library
-                </div>
-                <div
-                  tw="text-2xl mt-6 flex max-w-2xl text-balance"
-                  style={{ color: colors.secondaryText }}
-                >
-                  <p>
-                    Built with React, TypeScript, Tailwind CSS, Motion, and
-                    shadcn/ui.
-                  </p>
-                </div>
-                <div tw="mt-8 flex items-center">
-                  <div
-                    tw="px-4 py-2 rounded-full text-xl"
-                    style={{
-                      background: colors.accent + "22",
-                      color: colors.accent,
-                    }}
-                  >
-                    {SITE.domain}
-                  </div>
-                </div>
-              </div>
+          <div tw="flex flex-col items-center justify-center text-center w-full h-full p-12 ">
+            {logoBase64 && (
+              <img
+                src={logoBase64}
+                width={72}
+                height={72}
+                alt={SITE.title}
+                tw="rounded-xl shadow-lg mb-8"
+                style={{ objectFit: "cover" }}
+              />
             )}
-          </div>
+            <div tw="tracking-tight flex flex-col justify-center text-balance font-semibold text-7xl max-w-4xl">
+              {title}
+            </div>
 
-          <div tw="absolute bottom-8 right-8 flex items-center px-4 py-2 rounded-full text-xl">
-            <p
-              tw="font-medium"
+            <div
+              tw="text-3xl mt-6 text-balance font-normal max-w-3xl"
+              style={{ color: colors.secondaryText }}
+            >
+              {description}
+            </div>
+
+            <div
+              tw="font-medium text-2xl mt-8"
               style={{
                 maxWidth: "900px",
-                backgroundImage: `linear-gradient(90deg, #312e81 0%, #581c87 100%)`,
-                backgroundClip: "text",
-                color: "transparent",
+                color: colors.accent,
               }}
             >
               {SITE.domain}
-            </p>
+            </div>
           </div>
         </div>
       ),

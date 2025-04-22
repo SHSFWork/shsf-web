@@ -1,21 +1,16 @@
 import Link from "@shsfwork/components/custom/link";
-import { Star } from "lucide-react";
+import { Github } from "lucide-react";
 
 export default function OpenSourceBadge() {
   return (
     <Link
       title="View our open source code"
       href="https://github.com/shsfwork/shsf-web"
-      className="inline-flex items-center gap-1.5 text-sm font-medium group/link"
+      className="inline-flex items-center gap-1.5 text-sm font-medium"
       aria-label="View our open source code on GitHub"
     >
-      <span className="text-muted-foreground group-hover/link:text-primary/70 transition-all">
-        Open source
-      </span>
-      <Star className="size-4 fill-amber-500 text-amber-500 dark:fill-amber-300 dark:text-amber-300 group-hover/link:fill-amber-600 group-hover/link:text-amber-600 transition-all duration-300" />
-      <span className="inline-flex transition-colors duration-300 text-xs text-amber-500 dark:text-amber-300 group-hover/link:text-amber-600 dark:group-hover/link:text-amber-400">
-        Star on GitHub
-      </span>
+      <span className="text-muted-foreground">Source on</span>
+      <Github className="size-4 fill-muted-foreground" />
     </Link>
   );
 }

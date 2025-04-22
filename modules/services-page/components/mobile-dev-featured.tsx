@@ -12,7 +12,7 @@ export default function MobileDevFeatured() {
             <div className="h-full w-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
           </div>
           <div className="absolute top-6 right-1/2 transform translate-x-6 w-36 h-72 rounded-3xl border-4 border-foreground shadow-xl overflow-hidden rotate-6">
-            <div className="h-full w-full bg-gradient-to-br from-emerald-500 to-indigo-600"></div>
+            <div className="h-full w-full bg-gradient-to-br from-emerald-500 to-bone-600"></div>
           </div>
         </div>
       }

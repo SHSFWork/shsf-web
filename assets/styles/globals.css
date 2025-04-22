@@ -4,6 +4,56 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  /* Bone */
+  --color-bone-50: #fdfcfb;
+  --color-bone-100: #fcf9f8;
+  --color-bone-200: #f7f1ed;
+  --color-bone-300: #f2e9e2;
+  --color-bone-400: #e9d8cc;
+  --color-bone-500: #dfc7b6;
+  --color-bone-600: #c9b3a4;
+  --color-bone-700: #86776d;
+  --color-bone-800: #645a52;
+  --color-bone-900: #433c37;
+
+  /* Outer Space */
+  --color-outer-space-50: #f4f5f5;
+  --color-outer-space-100: #e9eaea;
+  --color-outer-space-200: #c8cccc;
+  --color-outer-space-300: #a7adad;
+  --color-outer-space-400: #656f6f;
+  --color-outer-space-500: #233131;
+  --color-outer-space-600: #202c2c;
+  --color-outer-space-700: #151d1d;
+  --color-outer-space-800: #101616;
+  --color-outer-space-900: #0b0f0f;
+
+  /* Sand Dune */
+  --color-sand-dune-50: #f8f8f7;
+  --color-sand-dune-100: #f2f0ef;
+  --color-sand-dune-200: #dedad6;
+  --color-sand-dune-300: #cac3be;
+  --color-sand-dune-400: #a3968d;
+  --color-sand-dune-500: #7b695c;
+  --color-sand-dune-600: #6f5f53;
+  --color-sand-dune-700: #4a3f37;
+  --color-sand-dune-800: #372f29;
+  --color-sand-dune-900: #25201c;
+
+  /* Stack */
+  --color-stack-50: #f9f9f9;
+  --color-stack-100: #f3f4f4;
+  --color-stack-200: #e1e3e2;
+  --color-stack-300: #cfd3d1;
+  --color-stack-400: #acb1af;
+  --color-stack-500: #88908c;
+  --color-stack-600: #7a827e;
+  --color-stack-700: #525654;
+  --color-stack-800: #3d413f;
+  --color-stack-900: #292b2a;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -46,71 +96,83 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: var(--color-bone-50);
+  --foreground: var(--color-outer-space-900);
+  --card: var(--color-bone-100);
+  --card-foreground: var(--color-outer-space-900);
+  --popover: var(--color-bone-100);
+  --popover-foreground: var(--color-outer-space-900);
+
+  --primary: var(--color-sand-dune-700);
+  --primary-foreground: var(--color-bone-50);
+  --secondary: var(--color-bone-200);
+  --secondary-foreground: var(--color-sand-dune-700);
+
+  --muted: var(--color-bone-200);
+  --muted-foreground: var(--color-outer-space-500);
+
+  --accent: var(--color-sand-dune-100);
+  --accent-foreground: var(--color-sand-dune-800);
+
+  --destructive: #e05f4b;
+  --border: var(--color-bone-300);
+  --input: var(--color-bone-400);
+  --ring: var(--color-sand-dune-500);
+
+  --chart-1: var(--color-stack-500);
+  --chart-2: var(--color-stack-600);
+  --chart-3: var(--color-stack-700);
+  --chart-4: var(--color-sand-dune-500);
+  --chart-5: var(--color-outer-space-500);
+
+  --sidebar: var(--color-bone-50);
+  --sidebar-foreground: var(--color-outer-space-900);
+  --sidebar-primary: var(--color-sand-dune-700);
+  --sidebar-primary-foreground: var(--color-bone-50);
+  --sidebar-accent: var(--color-bone-200);
+  --sidebar-accent-foreground: var(--color-sand-dune-700);
+  --sidebar-border: var(--color-bone-300);
+  --sidebar-ring: var(--color-sand-dune-500);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --background: var(--color-outer-space-900);
+  --foreground: var(--color-bone-50);
+  --card: var(--color-outer-space-800);
+  --card-foreground: var(--color-bone-50);
+  --popover: var(--color-outer-space-800);
+  --popover-foreground: var(--color-bone-50);
+
+  --primary: var(--color-sand-dune-300);
+  --primary-foreground: var(--color-outer-space-900);
+  --secondary: var(--color-outer-space-700);
+  --secondary-foreground: var(--color-bone-50);
+
+  --muted: var(--color-outer-space-700);
+  --muted-foreground: var(--color-bone-400);
+
+  --accent: var(--color-outer-space-700);
+  --accent-foreground: var(--color-bone-50);
+
+  --destructive: #ff6f61;
+  --border: var(--color-outer-space-700);
+  --input: var(--color-outer-space-600);
+  --ring: var(--color-sand-dune-300);
+
+  --chart-1: var(--color-stack-500);
+  --chart-2: var(--color-stack-400);
+  --chart-3: var(--color-stack-600);
+  --chart-4: var(--color-sand-dune-400);
+  --chart-5: var(--color-outer-space-400);
+
+  --sidebar: var(--color-outer-space-800);
+  --sidebar-foreground: var(--color-bone-50);
+  --sidebar-primary: var(--color-stack-500);
+  --sidebar-primary-foreground: var(--color-bone-50);
+  --sidebar-accent: var(--color-outer-space-700);
+  --sidebar-accent-foreground: var(--color-bone-50);
+  --sidebar-border: var(--color-outer-space-600);
+  --sidebar-ring: var(--color-sand-dune-400);
 }
 
 @layer base {

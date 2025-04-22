@@ -28,6 +28,9 @@ export const metadata: Metadata = constructMetadata({
 export default function Root({ children }: ChildrenType) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="SHSF" />
+      </head>
       <body className={cn(geistSans.variable, geistMono.variable)}>
         <NextThemesProvider>
           <RootLayout>{children}</RootLayout>

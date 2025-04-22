@@ -8,7 +8,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        ai: "bg-indigo-500 text-white hover:bg-indigo-600 border-indigo-700 border-b-4 border-b-indigo-600 shadow-md dark:bg-indigo-700  dark:hover:bg-indigo-800 dark:border-indigo-900 dark:border-b-indigo-800",
+        bone: "bg-bone-600 text-white hover:bg-bone-700 border-bone-700 border-b-4 border-b-bone-700 shadow-md dark:bg-bone-700  dark:hover:bg-bone-800 dark:border-bone-900 dark:border-b-bone-800",
         default:
           "bg-blue-500 text-white hover:bg-blue-600 border-blue-700 border-b-4 border-b-blue-600 shadow-md dark:bg-blue-700 dark:hover:bg-blue-800 dark:border-blue-900 dark:border-b-blue-800",
         destructive:
@@ -36,7 +36,7 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "bone",
       size: "default",
     },
   }

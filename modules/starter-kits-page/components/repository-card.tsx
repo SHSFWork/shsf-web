@@ -79,7 +79,7 @@ export default function RepositoryCard(data: GithubRepository) {
                 <span className="text-xs">{data.forkCount}</span>
               </div>
 
-              <div className="flex gap-0.5 items-center text-indigo-500 dark:text-indigo-300">
+              <div className="flex gap-0.5 items-center text-bone-700 dark:text-bone-400">
                 <PackageOpen className="size-4" />
                 <span className="text-xs">open-source</span>
               </div>

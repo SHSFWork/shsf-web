@@ -9,8 +9,8 @@ export const TECH_BADGES = [
   },
   {
     name: "TypeScript",
-    gradient: "from-indigo-100 via-indigo-200 to-indigo-300",
-    textColor: "text-indigo-950",
+    gradient: "from-bone-100 via-bone-200 to-bone-300",
+    textColor: "text-bone-950",
   },
   {
     name: "JavaScript",
@@ -44,13 +44,13 @@ export const TECH_BADGES = [
   },
   {
     name: "Redux",
-    gradient: "from-indigo-100 via-indigo-200 to-indigo-300",
-    textColor: "text-indigo-950",
+    gradient: "from-bone-100 via-bone-200 to-bone-300",
+    textColor: "text-bone-950",
   },
   {
     name: "Redux Toolkit",
-    gradient: "from-indigo-50 via-indigo-100 to-indigo-200",
-    textColor: "text-indigo-900",
+    gradient: "from-bone-50 via-bone-100 to-bone-200",
+    textColor: "text-bone-900",
   },
   {
     name: "Zustand",
@@ -171,7 +171,7 @@ export const SERVICES = [
   {
     icon: GitFork,
     title: "Open Source Tools",
-    description: "Developer-focused libraries and starter kits.",
+    description: "Developer-focused boilerplates and starter kits.",
   },
   {
     icon: Layout,

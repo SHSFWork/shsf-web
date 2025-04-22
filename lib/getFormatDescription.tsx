@@ -58,7 +58,7 @@ export default function getFormatDescription(description: string) {
     parts.push(
       <span
         key={`link-${index}`}
-        className="text-[#019ef6] transition-colors duration-300"
+        className="text-bone-700 dark:text-bone-600  transition-colors duration-300"
         // onClick={() => window.open(url, "_blank", "noopener noreferrer")}
       >
         {text.replace(/^https?:\/\/(www\.)?/, "")}
