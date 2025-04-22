@@ -137,7 +137,7 @@ const products = defineCollection({
       lastModification,
       image,
       og: absoluteUrl(
-        `/products/og?title=${encodeURI(product.title)}&description=${encodeURI(
+        `/og?title=${encodeURI(product.title)}&description=${encodeURI(
           product.excerpt
         )}`
       ),

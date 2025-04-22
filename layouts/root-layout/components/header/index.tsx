@@ -4,6 +4,7 @@ import ThemeSwitcher from "@shsfwork/components/custom/theme-switcher";
 
 import MobileNav from "./components/mobile-nav";
 import DesktopNav from "./components/desktop-nav";
+import DiscordButton from "@shsfwork/components/custom/discord-button";
 
 export default function Header() {
   return (
@@ -15,7 +16,10 @@ export default function Header() {
             <DesktopNav />
           </div>
 
-          <ThemeSwitcher />
+          <div className="flex items-center justify-center gap-1.5">
+            <DiscordButton />
+            <ThemeSwitcher />
+          </div>
         </nav>
 
         <MobileNav />

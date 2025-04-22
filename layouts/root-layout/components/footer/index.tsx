@@ -10,6 +10,7 @@ import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
 import { FOOTER__NAV } from "./constants";
 import OpenSourceBadge from "@shsfwork/components/custom/open-source-badge";
+import DiscordButton from "@shsfwork/components/custom/discord-button";
 
 export default function Footer() {
   return (
@@ -30,8 +31,9 @@ export default function Footer() {
                 startups and businesses that convert visitors into customers.
               </Balancer>
             </p>
-            <div className="delay-500 opacity-0 animate-appear inline-block">
+            <div className="delay-500 opacity-0 animate-appear inline-block flex items-center justify-center gap-1.5">
               <ThemeSwitcher />
+              <DiscordButton />
             </div>
           </div>
         </div>
