@@ -116,7 +116,7 @@
 
   --destructive: #e05f4b;
   --border: var(--color-bone-300);
-  --input: var(--color-bone-400);
+  --input: var(--color-bone-500);
   --ring: var(--color-sand-dune-500);
 
   --chart-1: var(--color-stack-500);
@@ -156,7 +156,7 @@
 
   --destructive: #ff6f61;
   --border: var(--color-outer-space-700);
-  --input: var(--color-outer-space-600);
+  --input: var(--color-outer-space-500);
   --ring: var(--color-sand-dune-300);
 
   --chart-1: var(--color-stack-500);

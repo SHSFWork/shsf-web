@@ -22,10 +22,11 @@ import { HeaderMenuItemProps } from "../types";
 
 import Link from "@shsfwork/components/custom/link";
 import ThemeSwitcher from "@shsfwork/components/custom/theme-switcher";
+import DiscordButton from "@shsfwork/components/custom/discord-button";
 
 export default function MobileNav() {
   return (
-    <div className="flex h-16 items-center justify-between md:hidden">
+    <div className="flex h-16 items-center justify-between lg:hidden">
       <Logo />
 
       <Sheet>
@@ -41,14 +42,17 @@ export default function MobileNav() {
             </SheetTitle>
           </SheetHeader>
 
-          <div className="px-4">
+          <div className="px-4 space-y-2">
             <nav>
               <Accordion type="single" collapsible className="w-full">
                 {HEADER_NAV.map(RenderMobileMenuItem)}
               </Accordion>
             </nav>
 
-            <ThemeSwitcher />
+            <div className="flex items-center gap-1.5">
+              <DiscordButton />
+              <ThemeSwitcher />
+            </div>
           </div>
         </SheetContent>
       </Sheet>

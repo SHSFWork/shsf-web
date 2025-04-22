@@ -5,12 +5,12 @@ import Container from "@shsfwork/components/semantic-elements/container";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 
 import FooterNav from "./components/nav";
-import { NewsletterSection } from "../../../../components/custom/newsletter";
 import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
 import { FOOTER__NAV } from "./constants";
 import OpenSourceBadge from "@shsfwork/components/custom/open-source-badge";
 import DiscordButton from "@shsfwork/components/custom/discord-button";
+import { NewsletterSection } from "@shsfwork/components/custom/newsletter";
 
 export default function Footer() {
   return (
@@ -31,7 +31,7 @@ export default function Footer() {
                 startups and businesses that convert visitors into customers.
               </Balancer>
             </p>
-            <div className="delay-500 opacity-0 animate-appear inline-block flex items-center justify-center gap-1.5">
+            <div className="delay-500 opacity-0 animate-appear flex items-center gap-1.5">
               <ThemeSwitcher />
               <DiscordButton />
             </div>

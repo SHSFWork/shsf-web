@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="w-full">
       <Container id="header">
-        <nav className="hidden h-16 items-center justify-between md:flex">
+        <nav className="hidden h-16 items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
             <Logo />
             <DesktopNav />
