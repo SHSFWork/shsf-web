@@ -11,6 +11,7 @@ import resolveImageBlurDataURL from "@shsfwork/lib/content-collections/imageBlur
 import remarkGfm from "remark-gfm";
 import mdxEmbedder from "@shsfwork/lib/content-collections/mdxEmbedder";
 import rehypeSlug from "rehype-slug";
+import { absoluteUrl } from "@shsfwork/lib/absoluteUrl";
 
 type ImageParams = {
   image: string;
@@ -135,9 +136,12 @@ const products = defineCollection({
       readingTime: calculateReadingTime(product.content),
       lastModification,
       image,
-      og: `${process.env.NEXT_PUBLIC_APP_URL}/products/og?title=${encodeURI(
-        product.title
-      )}&description=${encodeURI(product.excerpt)}`,
+      og: absoluteUrl(
+        `/products/og?title=${encodeURI(product.title)}&description=${encodeURI(
+          product.excerpt
+        )}`
+      ),
+
       slugAsParams: product._meta.path.split("/").slice(1).join("/"),
       url: `/products/${product._meta.path}`,
     };
