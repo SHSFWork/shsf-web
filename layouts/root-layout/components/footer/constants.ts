@@ -12,6 +12,7 @@ export const FOOTER__NAV = {
     { href: "https://github.com/shsfwork", title: "GitHub" },
     { href: "https://medium.com/shsfwork", title: "Medium" },
     { href: "https://www.linkedin.com/company/shsf-work", title: "LinkedIn" },
+    { href: "https://bsky.app/profile/shsf.work", title: "Bluesky" },
   ],
   product: [
     ...allProducts.map((product) => ({
