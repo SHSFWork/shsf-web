@@ -5,10 +5,10 @@ export default function DiscordButton() {
   return (
     <Link
       title="Join us on Discord"
-      href="https://discord.gg/RbcGcWBMxx"
+      href="https://discord.gg/7QWGDKBksn"
       className={buttonVariants({ variant: "ghost" })}
     >
-      Join Us
+      Join us
     </Link>
   );
 }
