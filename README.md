@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SHSF Work Website
+
+Frontend repository for the SHSF work website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (LTS version recommended)
+- npm or bun
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-org/shsf-web.git
+cd shsf-web
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+bun install
+```
+
+3. Set up environment variables
+
+```bash
+cp env.local.example .env.local
+```
+
+Edit `.env.local` with your configuration values.
+
+4. Start the development server
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable                        | Description                                   |
+| ------------------------------- | --------------------------------------------- |
+| `USE_MOCK_DATA_FOR_DEVELOPMENT` | Set to `true` to use mock data in development |
+| `GITHUB_APP_ID`                 | Your GitHub App ID                            |
+| `GITHUB_PRIVATE_KEY`            | Your GitHub App private key                   |
+| `GITHUB_INSTALLATION_ID`        | Your GitHub App installation ID               |
 
-## Learn More
+## Build and Deployment
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Run production build
+npm run build
+# or
+bun build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start production server
+npm run start
+# or
+bun start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technology Stack
 
-## Deploy on Vercel
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **Form Handling**: [React Hook Form](https://react-hook-form.com/)
+- **Validation**: [Zod](https://zod.dev/)
+- **Content**: [Content Collections](https://content-collections.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+Project Structure
+├── app/
+├── assets/           # Assets, resources, and styles
+├── components/
+├── constants/        # Constants and configuration
+├── hooks/
+├── layouts/          # Page layouts and structural templates
+├── lib/
+├── modules/          # Feature-specific page implementations
+├── providers/        # Context providers
+├── public/
+├── services/         # API services and external integrations
+├── types/
+└── www/              # Content collections
+```
+
+## Development
+
+### Linting
+
+```bash
+npm run lint
+# or
+bun lint
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to this project.
