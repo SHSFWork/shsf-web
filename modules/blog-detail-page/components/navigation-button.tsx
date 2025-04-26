@@ -28,7 +28,9 @@ export default function NavigationButton({
           title={`Navigate to blog "${blog.title}"`}
         >
           <Icon size={16} />
-          <span className="hidden md:block">{blog.title}</span>
+          <span className="hidden md:block max-w-40 truncate">
+            {blog.title}
+          </span>
         </a>
       </Button>
     </>

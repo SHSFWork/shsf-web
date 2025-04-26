@@ -129,7 +129,7 @@ export async function GET(request: Request) {
                 style={{ objectFit: "cover" }}
               />
             )}
-            <div tw="tracking-tight flex flex-col justify-center text-balance font-semibold text-7xl max-w-4xl">
+            <div tw="tracking-tight flex flex-col justify-center text-balance font-semibold text-6xl max-w-3xl">
               {title}
             </div>
 

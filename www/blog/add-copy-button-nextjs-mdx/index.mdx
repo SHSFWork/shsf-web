@@ -1,0 +1,243 @@
+---
+title: "Add a Copy to Clipboard Button in Next.js MDX with Contentlayer"
+excerpt: "Learn how to easily add a copy-to-clipboard button to code blocks in your Next.js MDX project using Contentlayer and Rehype Pretty Code."
+tags:
+  - Next.js
+  - Contentlayer
+category: starter-kit
+author:
+  name: Ozan Tekin
+  src: /logos/shsf-me.png
+  title: Frontend Engineer
+  href: https://ozantek.in
+createdAt: 2025-04-26
+og: /www/blog/add-copy-button-nextjs-mdx/assets/og.png
+---
+
+Find the complete source code in our [content-collections-nextjs-blog-starter-kit](https://github.com/SHSFWork/content-collections-nextjs-blog-starter-kit) repository.
+
+## Before You Start
+
+By the end of this series, you'll have a blog page with a dark-light theme, SEO optimization, and improvements to enhance the reading experience.
+
+The `content-collections-nextjs-blog-starter-kit` repository, linked at the end of this article, is a step ahead in this series and provides answers to your UI/UX questions.
+
+> Note: Before starting, complete the basic setup following the steps in the [Contentlayer Documentation](https://contentlayer.dev).
+
+## Introduction
+
+Follow these steps to add a "copy to clipboard" button to the code blocks in your Next.js application created with MDX. This feature improves the user experience and makes code sharing easier.
+
+Install the necessary packages:
+
+```bash
+npm install rehype-pretty-code shiki unist-util-visit
+```
+
+## Setting Up the Rehype Pretty Code Plugin
+
+Add this section to the `makeSource` function in your `contentlayer.config.ts` file:
+
+```ts
+mdx: {
+  rehypePlugins: [
+    () => (tree) => {
+      visit(tree, (node) => {
+        if (node?.type === "element" && node?.tagName === "pre") {
+          const [codeEl] = node.children;
+          if (codeEl.tagName !== "code") return;
+          node.__rawString__ = codeEl.children?.[0].value;
+        }
+      });
+    },
+    [
+      rehypePrettyCode,
+      {
+        theme: "github-dark",
+        keepBackground: false,
+        onVisitLine(node: any) {
+          if (node.children.length === 0) {
+            node.children = [{ type: "text", value: " " }];
+          }
+        },
+      },
+    ],
+    () => (tree) => {
+      visit(tree, (node) => {
+        if (node?.type === "element" && node?.tagName === "figure") {
+          if (!("data-rehype-pretty-code-figure" in node.properties)) {
+            return;
+          }
+          const preElement = node.children.at(-1);
+          if (preElement.tagName !== "pre") {
+            return;
+          }
+          preElement.properties["__rawString__"] = node.__rawString__;
+        }
+      });
+    },
+  ],
+}
+```
+
+## Pre Component
+
+```tsx
+interface PreProps extends React.HTMLProps<HTMLPreElement> {
+  __rawString__?: string;
+  ["data-language"]?: string;
+}
+
+export function PreCustom(props: PreProps) {
+  const {
+    children,
+    __rawString__ = "",
+    ["data-language"]: dataLanguage = "Shell",
+  } = props;
+
+  return (
+    <pre
+      className="rounded-xl bg-slate-950 relative overflow-hidden p-[0.5rem] shadow-smooth"
+      {...props}
+    >
+      <p className="absolute bottom-0 right-0 capitalize text-xs font-medium bg-slate-700 text-white p-1 rounded-tl-lg">
+        {dataLanguage}
+      </p>
+      {children}
+    </pre>
+  );
+}
+```
+
+## Code Component
+
+```tsx
+import { HTMLAttributes } from "react";
+import { cn } from "@/utils/cn";
+
+export const BasicItems = {
+  code: (props: HTMLAttributes<HTMLElement>) => {
+    const { className, ...rest } = props;
+    return (
+      <code
+        className={cn(
+          "rounded-sm bg-slate-950 px-[0.5rem] py-1 font-mono text-sm text-foreground text-pretty leading-relaxed text-white",
+          className
+        )}
+        {...rest}
+      />
+    );
+  },
+};
+```
+
+## Rendering MDX Content
+
+```tsx
+import { BasicItems } from "./basic-items";
+import { PreCustom } from "./pre-component";
+
+export const MDXComponents = {
+  pre: PreCustom,
+  ...BasicItems,
+};
+```
+
+```tsx
+"use client";
+
+import { useMDXComponent } from "next-contentlayer/hooks";
+import { MDXComponents } from "@/components/mdx/components";
+
+interface MdxProps {
+  code: string;
+}
+
+export function Mdx(props: MdxProps) {
+  const { code } = props;
+  const Component = useMDXComponent(code);
+
+  return <Component components={MDXComponents} />;
+}
+```
+
+## Copy Button
+
+```tsx
+"use client";
+
+import { Button, ButtonProps } from "@/components/shadcn/button";
+import { cn } from "@/utils/cn";
+import { Checks, ClipboardText } from "@phosphor-icons/react";
+import { useState } from "react";
+
+interface CopyButtonProps extends ButtonProps {
+  text: string;
+  className?: string;
+}
+
+export function CopyButton({ text, className, ...props }: CopyButtonProps) {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copy = async () => {
+    await navigator.clipboard.writeText(text);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 700);
+  };
+
+  return (
+    <Button
+      size="icon"
+      className={cn("size-7 !bg-slate-700 !text-white", className)}
+      disabled={isCopied}
+      onClick={copy}
+      aria-label="Copy"
+      {...props}
+    >
+      <span className="sr-only">Copy</span>
+      {isCopied ? <Checks className="text-green-400" /> : <ClipboardText />}
+    </Button>
+  );
+}
+```
+
+## Adding CopyButton to Pre Component
+
+```tsx
+import { CopyButton } from "./copy-button";
+
+interface PreProps extends React.HTMLProps<HTMLPreElement> {
+  __rawString__?: string;
+  ["data-language"]?: string;
+}
+
+export function PreCustom(props: PreProps) {
+  const {
+    children,
+    __rawString__ = "",
+    ["data-language"]: dataLanguage = "Shell",
+  } = props;
+
+  return (
+    <pre
+      className="rounded-xl bg-slate-950 relative overflow-hidden p-[0.5rem] shadow-smooth"
+      {...props}
+    >
+      <p className="absolute bottom-0 right-0 capitalize text-xs font-medium bg-slate-700 text-white p-1 rounded-tl-lg">
+        {dataLanguage}
+      </p>
+      <CopyButton
+        text={__rawString__}
+        className="absolute right-1 top-1 shadow-smooth"
+      />
+      {children}
+    </pre>
+  );
+}
+```
+
+## Conclusion
+
+By following these steps, you can easily add a "copy to clipboard" button to your MDX-based site created with **Next.js** and **Contentlayer**. This feature will significantly improve code sharing and user experience.
+
+Feel free to explore the [content-collections-nextjs-blog-starter-kit](https://github.com/SHSFWork/content-collections-nextjs-blog-starter-kit) repository for further customization and enhancements. If you have any questions, feel free to leave a comment or reach out to us on GitHub. 👋
