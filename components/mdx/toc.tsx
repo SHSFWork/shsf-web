@@ -115,7 +115,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
                   : "text-muted-foreground"
               )}
             >
-              {item.title}
+              • {item.title}
             </Link>
             {item.items?.length ? (
               <Tree tree={item} level={level + 1} activeItem={activeItem} />

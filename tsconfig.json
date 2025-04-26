@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "www/blog/hello-world/index.mdx"  ],
   "exclude": ["node_modules"]
 }

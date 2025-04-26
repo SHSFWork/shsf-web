@@ -1,16 +1,13 @@
 import { type Product } from "content-collections";
-
 import Image from "next/image";
-
 import Markdown from "@shsfwork/components/mdx/markdown";
 import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import NavigationButton from "./components/navigation-button";
-import { ProductDetailsSchema } from "@shsfwork/modules/porducts-page/components/jsonLd";
-
 import { createPrevAndNext } from "./lib";
 import DateTime from "../../components/custom/date-time";
 import ScrollToTop from "./components/scroll-to-top";
 import ColophonItem from "./components/colophon";
+import { ProductDetailsSchema } from "@shsfwork/modules/porducts-page/components/schema";
 
 type ProductDetailsPageProps = {
   product: Product;
@@ -23,6 +20,8 @@ export default function ProductDetailsPage({
 
   return (
     <>
+      <ProductDetailsSchema product={product} />
+
       <figure className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pb-4">
         <div className="w-full aspect-square md:aspect-auto relative rounded-xl overflow-hidden border shadow">
           <Image
@@ -78,8 +77,6 @@ export default function ProductDetailsPage({
         <ScrollToTop />
         <NavigationButton type="next" product={next} />
       </nav>
-
-      <ProductDetailsSchema product={product} />
     </>
   );
 }

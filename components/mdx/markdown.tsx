@@ -5,7 +5,9 @@ import { Hash } from "lucide-react";
 import { ReactNode } from "react";
 import ContentArticle from "./content-article";
 import MarkdownImage from "./markdown-image";
+import Pre from "./pre";
 import Link from "@shsfwork/components/custom/link";
+import { cn } from "@shsfwork/lib/cn";
 
 type MarkdownProps = {
   code: string;
@@ -45,14 +47,23 @@ export default function Markdown({ code }: MarkdownProps) {
       <MDXContent
         code={code}
         components={{
+          a: Link,
+          pre: Pre,
           img: MarkdownImage,
+
           h1: heading("h1"),
           h2: heading("h2"),
           h3: heading("h3"),
           h4: heading("h4"),
           h5: heading("h5"),
           h6: heading("h6"),
-          a: Link,
+
+          code: ({
+            className,
+            ...props
+          }: React.HTMLAttributes<HTMLElement>) => (
+            <code className={cn("px-2 py-[0.2rem]", className)} {...props} />
+          ),
         }}
       />
     </ContentArticle>

@@ -1,5 +1,7 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
+import { visit } from "unist-util-visit";
+import rehypePrettyCode from "rehype-pretty-code";
 import readingTime from "reading-time";
 import { exec } from "child_process";
 import { promisify } from "node:util";
@@ -21,6 +23,7 @@ type ImageParams = {
 const execAsync = promisify(exec);
 
 const PRODUCT_DIRECTORY = "www/products";
+const BLOG_DIRECTORY = "www/blog";
 
 function calculateReadingTime(content: string): string {
   const contentWithoutSvg = content.replace(/<svg+.+?(?=<\/svg>)<\/svg>/gs, "");
@@ -148,6 +151,108 @@ const products = defineCollection({
   },
 });
 
+const blog = defineCollection({
+  name: "blog",
+  directory: BLOG_DIRECTORY,
+  include: "*/index.mdx",
+  schema: (z) => ({
+    title: z.string(),
+    excerpt: z.string(),
+    createdAt: z.string(),
+    author: z.object({
+      name: z.string(),
+      src: z.string(),
+      title: z.string(),
+      href: z.string(),
+    }),
+    og: z.string(),
+    category: z.enum(["product", "boilerplate", "starter-kit"]),
+    tags: z.array(z.string()),
+  }),
+  transform: async (blog, ctx) => {
+    const mdx = await compileMDX(ctx, blog, {
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          staticImages,
+          {
+            publicDir: path.join("public", "www/blog"),
+            resourcePath: "/" + BLOG_DIRECTORY,
+            sourceRoot: BLOG_DIRECTORY,
+          },
+        ],
+
+        () => (tree) => {
+          visit(tree, (node) => {
+            if (node?.type === "element" && node?.tagName === "pre") {
+              const [codeEl] = node.children || [];
+              if (codeEl?.tagName !== "code") return;
+              node.__rawstring__ = codeEl.children?.[0]?.value;
+            }
+          });
+        },
+
+        [
+          rehypePrettyCode,
+          {
+            theme: "github-dark",
+            keepBackground: false,
+            onVisitLine(node: { children: unknown[] }) {
+              if (node.children.length === 0) {
+                node.children = [{ type: "text", value: " " }];
+              }
+            },
+          },
+        ],
+
+        () => (tree) => {
+          visit(tree, (node) => {
+            if (
+              node?.type === "element" &&
+              node.properties &&
+              "data-rehype-pretty-code-figure" in node.properties
+            ) {
+              const preElement = node.children.at(-1);
+              if (!preElement || preElement.tagName !== "pre") return;
+              preElement.properties = preElement.properties || {};
+              preElement.properties["__rawstring__"] = node.__rawstring__;
+            }
+          });
+        },
+      ],
+
+      remarkPlugins: [remarkGfm, mdxEmbedder],
+    });
+    const lastModification = await ctx.cache(
+      blog._meta.filePath,
+      lastModificationDate
+    );
+    const image = await ctx.cache(
+      { image: blog.og, directory: blog._meta.directory },
+      collectImageInformation
+    );
+
+    return {
+      ...blog,
+      content: {
+        mdx,
+        raw: blog.content,
+      },
+      readingTime: calculateReadingTime(blog.content),
+      lastModification,
+      image,
+      og: absoluteUrl(
+        `/og?title=${encodeURI(blog.title)}&description=${encodeURI(
+          blog.excerpt
+        )}`
+      ),
+
+      slugAsParams: blog._meta.path.split("/").slice(1).join("/"),
+      url: `/blog/${blog._meta.path}`,
+    };
+  },
+});
+
 export default defineConfig({
-  collections: [products],
+  collections: [products, blog],
 });

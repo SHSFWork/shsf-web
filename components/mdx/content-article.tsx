@@ -5,11 +5,19 @@ export default function ContentArticle({ children }: ChildrenType) {
     <article
       className={cn(
         "py-4",
+        "md:max-w-2xl container",
         "prose prose-base md:prose-lg dark:prose-invert",
-        "prose-code:rounded prose-code:border prose-code:px-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none",
-        "prose-code:border-base-300 prose-code:bg-base-100 prose-code:text-base-700",
-        "dark:prose-code:border-base-500 dark:prose-code:bg-base-700 dark:prose-code:text-base-100",
-        "hover:prose-a:decoration-primary-500 hover:prose-a:decoration-2"
+        "hover:prose-a:decoration-primary-500 hover:prose-a:decoration-2",
+
+        // Inline code styling
+        "prose-code:rounded prose-code:border-0 prose-code:px-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none",
+        "prose-code:bg-stack-900 prose-code:p-1 prose-code:text-white",
+
+        // Code block container styling
+        "prose-pre:rounded-lg prose-pre:border-0 prose-pre:bg-stack-900 prose-pre:p-4",
+
+        // Code within code blocks
+        "prose-pre:prose-code:bg-transparent prose-pre:prose-code:border-0 prose-pre:prose-code:p-4"
       )}
     >
       {children}

@@ -26,4 +26,5 @@ export const HEADER_NAV: HeaderMenuItemProps[] = [
   },
   { title: "Boilerplates", url: "/boilerplates" },
   { title: "Starter Kits", url: "/starter-kits" },
+  { title: "Blog", url: "/blog" },
 ];
