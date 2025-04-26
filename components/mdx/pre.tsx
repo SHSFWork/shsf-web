@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Check, Copy } from "lucide-react";
-import { cn } from "@shsfwork/lib/cn";
+import { CheckCheck, Copy } from "lucide-react";
 
 interface PreProps extends React.HTMLProps<HTMLPreElement> {
   __rawstring__?: string;
@@ -23,24 +22,18 @@ export default function Pre(props: PreProps) {
   };
 
   return (
-    <>
-      <pre className="relative group" {...props}>
-        <button
-          onClick={copy}
-          disabled={isCopied}
-          aria-label="Copy"
-          className={cn(
-            "absolute right-2 top-2 z-10",
-            "md:opacity-0 md:group-hover:opacity-100 duration-200 transition-all",
-            "[&_svg:not([class*='size-'])]:size-4 p-2 cursor-pointer",
-            "disabled:opacity-10 disabled:pointer-events-none"
-          )}
-        >
-          {isCopied ? <Check /> : <Copy />}
-        </button>
-
+    <div className="relative group">
+      <button
+        onClick={copy}
+        disabled={isCopied}
+        aria-label="Copy"
+        className="absolute right-0 top-0 z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100 duration-200 transition-opacity [&_svg:not([class*='size-'])]:size-4 p-3 cursor-pointer disabled:text-stack-700 disabled:pointer-events-none text-stack-300"
+      >
+        {isCopied ? <CheckCheck /> : <Copy />}
+      </button>
+      <pre className="overflow-auto" {...props}>
         {children}
       </pre>
-    </>
+    </div>
   );
 }

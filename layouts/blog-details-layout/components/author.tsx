@@ -35,7 +35,9 @@ export default function Author() {
       <div className="relative">
         <Avatar>
           <AvatarImage src={blog.author.src} alt={blog.author.name} />
-          <AvatarFallback>KK</AvatarFallback>
+          <AvatarFallback>
+            {blog.author.name?.match(/\b\w/g)?.join("")?.slice(0, 2)}
+          </AvatarFallback>
         </Avatar>
         <span className="absolute -end-1.5 -top-1.5">
           <span className="sr-only">Verified</span>
