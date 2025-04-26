@@ -10,7 +10,7 @@ export default function GithubButton() {
       href={REPO_ONLINE.github.href}
       className={buttonVariants({ variant: "ghost", size: "icon" })}
     >
-      <Github className="size-4 fill-muted-foreground" />
+      <Github className="size-4 text-muted-foreground fill-muted-foreground" />
 
       <span className="sr-only">{REPO_ONLINE.github.title}</span>
     </Link>

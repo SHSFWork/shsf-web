@@ -18,6 +18,10 @@ export const REPO_ONLINE = {
     title: "Join the SHSF Work Discord",
     href: "https://discord.gg/7QWGDKBksn",
   },
+  source: {
+    title: "Source code on GitHub",
+    href: "https://github.com/SHSFWork/shsf-web",
+  },
 };
 
 export const DEV_ONLINE = {
