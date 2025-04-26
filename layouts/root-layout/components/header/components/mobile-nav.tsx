@@ -23,6 +23,7 @@ import { HeaderMenuItemProps } from "../types";
 import Link from "@shsfwork/components/custom/link";
 import ThemeSwitcher from "@shsfwork/components/custom/theme-switcher";
 import DiscordButton from "@shsfwork/components/custom/discord-button";
+import GithubButton from "@shsfwork/components/custom/github-button";
 
 export default function MobileNav() {
   return (
@@ -51,6 +52,7 @@ export default function MobileNav() {
 
             <div className="flex items-center gap-1.5">
               <DiscordButton />
+              <GithubButton />
               <ThemeSwitcher />
             </div>
           </div>

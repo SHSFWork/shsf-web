@@ -1,4 +1,4 @@
-import { ONLINE } from "@shsfwork/constants/common";
+import { DEV_ONLINE } from "@shsfwork/constants/common";
 import {
   Tooltip,
   TooltipContent,
@@ -22,8 +22,8 @@ export default function ContactButton({
         <TooltipTrigger asChild>
           <Button size="lg" className="px-16" asChild>
             <Link
-              title={ONLINE.contact.title}
-              href={ONLINE.contact.href + "?subject=Hello!"}
+              title={DEV_ONLINE.contact.title}
+              href={DEV_ONLINE.contact.href + "?subject=Hello!"}
             >
               {label}
             </Link>

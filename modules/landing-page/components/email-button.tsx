@@ -2,10 +2,10 @@
 
 import { useState, useRef } from "react";
 import { Clipboard, Check } from "lucide-react";
-import { ONLINE } from "@shsfwork/constants/common";
+import { DEV_ONLINE } from "@shsfwork/constants/common";
 
 export const EmailCopyButton = () => {
-  const email = ONLINE.contact.email;
+  const email = DEV_ONLINE.contact.email;
 
   const [copied, setCopied] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);

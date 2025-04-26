@@ -1,4 +1,4 @@
-import { SITE, ONLINE } from "@shsfwork/constants/common";
+import { SITE, DEV_ONLINE } from "@shsfwork/constants/common";
 import { absoluteUrl } from "./absoluteUrl";
 import { Metadata } from "next";
 
@@ -61,7 +61,7 @@ export function constructMetadata({
       title,
       description,
       images: [image || defaultImage],
-      creator: `@${ONLINE.bluesky.title}`,
+      creator: `@${DEV_ONLINE.bluesky.title}`,
     },
     icons: "/favicon.ico",
     metadataBase: new URL(SITE.url),

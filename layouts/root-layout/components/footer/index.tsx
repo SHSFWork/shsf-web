@@ -11,6 +11,7 @@ import { FOOTER__NAV } from "./constants";
 import OpenSourceBadge from "@shsfwork/components/custom/open-source-badge";
 import DiscordButton from "@shsfwork/components/custom/discord-button";
 import { NewsletterSection } from "@shsfwork/components/custom/newsletter";
+import GithubButton from "@shsfwork/components/custom/github-button";
 
 export default function Footer() {
   return (
@@ -32,8 +33,9 @@ export default function Footer() {
               </Balancer>
             </p>
             <div className="delay-500 opacity-0 animate-appear flex items-center gap-1.5">
-              <ThemeSwitcher />
               <DiscordButton />
+              <GithubButton />
+              <ThemeSwitcher />
             </div>
           </div>
         </div>
