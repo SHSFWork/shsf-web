@@ -19,6 +19,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
 
     {
+      url: `${protocol}://${domain}/bookmarks`,
+      lastModified: new Date(),
+    },
+
+    {
       url: `${protocol}://${domain}/boilerplates`,
       lastModified: new Date(),
     },

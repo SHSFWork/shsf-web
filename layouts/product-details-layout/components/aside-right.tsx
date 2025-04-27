@@ -49,7 +49,7 @@ export default function AsideRight() {
     <>
       <BackButton />
       {toc && <Toc toc={toc} />}
-      <div className="hidden md:block relative overflow-hidden bg-accent rounded-xl px-4">
+      <div className="hidden lg:block relative overflow-hidden bg-accent rounded-xl px-4">
         <NewsletterSection />
         <NewsletterBgEffect />
       </div>

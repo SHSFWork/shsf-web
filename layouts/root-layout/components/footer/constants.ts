@@ -5,9 +5,10 @@ export const FOOTER__NAV = {
     { href: "/", title: "Home" },
     { href: "/services", title: "Services" },
     { href: "/products", title: "Products" },
+    { href: "/blog", title: "Blog" },
+    { href: "/bookmarks", title: "Bookmarks" },
     { href: "/boilerplates", title: "Boilerplates" },
     { href: "/starter-kits", title: "Starter Kits" },
-    { href: "/blog", title: "Blog" },
   ],
   online: [
     { href: "https://github.com/shsfwork", title: "GitHub" },
