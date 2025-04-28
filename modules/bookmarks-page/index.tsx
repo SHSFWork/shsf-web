@@ -34,7 +34,7 @@ export default function BookmarksPage(props: BookmarksPageProps) {
               {collections.length !== 1 ? "s" : ""}
             </p>
           </div>
-          <Grid className="gap-8 md:gap-4">
+          <Grid className="gap-8 md:!gap-y-8 md:gap-4">
             {collections.map((collection) => (
               <CollectionCard key={collection._id} collection={collection} />
             ))}
