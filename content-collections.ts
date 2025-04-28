@@ -23,7 +23,7 @@ type ImageParams = {
 const execAsync = promisify(exec);
 
 const PRODUCT_DIRECTORY = "www/products";
-const BLOG_DIRECTORY = "www/blog";
+const GUIDE_DIRECTORY = "www/guide";
 
 function calculateReadingTime(content: string): string {
   const contentWithoutSvg = content.replace(/<svg+.+?(?=<\/svg>)<\/svg>/gs, "");
@@ -151,9 +151,9 @@ const products = defineCollection({
   },
 });
 
-const blog = defineCollection({
-  name: "blog",
-  directory: BLOG_DIRECTORY,
+const guide = defineCollection({
+  name: "guide",
+  directory: GUIDE_DIRECTORY,
   include: "*/index.mdx",
   schema: (z) => ({
     title: z.string(),
@@ -169,16 +169,16 @@ const blog = defineCollection({
     category: z.enum(["product", "boilerplate", "starter-kit"]),
     tags: z.array(z.string()),
   }),
-  transform: async (blog, ctx) => {
-    const mdx = await compileMDX(ctx, blog, {
+  transform: async (guide, ctx) => {
+    const mdx = await compileMDX(ctx, guide, {
       rehypePlugins: [
         rehypeSlug,
         [
           staticImages,
           {
-            publicDir: path.join("public", "www/blog"),
-            resourcePath: "/" + BLOG_DIRECTORY,
-            sourceRoot: BLOG_DIRECTORY,
+            publicDir: path.join("public", "www/guide"),
+            resourcePath: "/" + GUIDE_DIRECTORY,
+            sourceRoot: GUIDE_DIRECTORY,
           },
         ],
 
@@ -224,35 +224,35 @@ const blog = defineCollection({
       remarkPlugins: [remarkGfm, mdxEmbedder],
     });
     const lastModification = await ctx.cache(
-      blog._meta.filePath,
+      guide._meta.filePath,
       lastModificationDate
     );
     const image = await ctx.cache(
-      { image: blog.og, directory: blog._meta.directory },
+      { image: guide.og, directory: guide._meta.directory },
       collectImageInformation
     );
 
     return {
-      ...blog,
+      ...guide,
       content: {
         mdx,
-        raw: blog.content,
+        raw: guide.content,
       },
-      readingTime: calculateReadingTime(blog.content),
+      readingTime: calculateReadingTime(guide.content),
       lastModification,
       image,
       og: absoluteUrl(
-        `/og?title=${encodeURI(blog.title)}&description=${encodeURI(
-          blog.excerpt
+        `/og?title=${encodeURI(guide.title)}&description=${encodeURI(
+          guide.excerpt
         )}`
       ),
 
-      slugAsParams: blog._meta.path.split("/").slice(1).join("/"),
-      url: `/blog/${blog._meta.path}`,
+      slugAsParams: guide._meta.path.split("/").slice(1).join("/"),
+      url: `/guide/${guide._meta.path}`,
     };
   },
 });
 
 export default defineConfig({
-  collections: [products, blog],
+  collections: [products, guide],
 });

@@ -1,14 +1,14 @@
 "use client";
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { allBlogs } from "content-collections";
+import { allGuides } from "content-collections";
 import { getTocType, TocType } from "@shsfwork/lib/toc";
 import Toc from "@shsfwork/components/mdx/toc";
 import BackButton from "@shsfwork/components/custom/back-button";
 import NewsletterBgEffect from "@shsfwork/layouts/root-layout/components/footer/components/newsletter-bg-effect";
 import { NewsletterSection } from "@shsfwork/components/custom/newsletter";
 import { useMounted } from "@shsfwork/hooks/useMounted";
-import Author from "@shsfwork/layouts/blog-details-layout/components/author";
+import Author from "@shsfwork/layouts/guide-details-layout/components/author";
 
 export default function AsideRight() {
   const mounted = useMounted();
@@ -17,30 +17,30 @@ export default function AsideRight() {
 
   const slug = React.useMemo(() => {
     const segments = pathname.split("/").filter(Boolean);
-    return segments[0] === "blog" && segments.length > 1
+    return segments[0] === "guide" && segments.length > 1
       ? segments.slice(1).join("/")
       : "";
   }, [pathname]);
 
-  const blog = React.useMemo(
-    () => allBlogs.find((p) => p._meta.path === slug),
+  const guide = React.useMemo(
+    () => allGuides.find((p) => p._meta.path === slug),
     [slug]
   );
 
   React.useEffect(() => {
-    if (!blog) return;
+    if (!guide) return;
     const loadToc = async () => {
       try {
-        const tocData = await getTocType(blog.content.raw);
+        const tocData = await getTocType(guide.content.raw);
         if (mounted) setToc(tocData);
       } catch (error) {
         console.error("Error loading TOC:", error);
       }
     };
     loadToc();
-  }, [blog, mounted]);
+  }, [guide, mounted]);
 
-  if (!blog) return null;
+  if (!guide) return null;
 
   return (
     <>

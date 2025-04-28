@@ -22,7 +22,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = collection.title;
+  const title = collection.title + " — Bookmarks";
   const description = `${collectionsData.items.length} bookmark${
     collectionsData.items.length !== 1 ? "s" : ""
   } in this collection`;

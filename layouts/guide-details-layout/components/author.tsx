@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { allBlogs } from "content-collections";
+import { allGuides } from "content-collections";
 import {
   Avatar,
   AvatarFallback,
@@ -14,29 +14,29 @@ export default function Author() {
 
   const slug = React.useMemo(() => {
     const segments = pathname.split("/").filter(Boolean);
-    return segments[0] === "blog" && segments.length > 1
+    return segments[0] === "guide" && segments.length > 1
       ? segments.slice(1).join("/")
       : "";
   }, [pathname]);
 
-  const blog = React.useMemo(
-    () => allBlogs.find((p) => p._meta.path === slug),
+  const guide = React.useMemo(
+    () => allGuides.find((p) => p._meta.path === slug),
     [slug]
   );
 
-  if (!blog) return null;
+  if (!guide) return null;
 
   return (
     <Link
-      title={`${blog.author.name} on ${blog.title}`}
-      href={blog.author.href}
+      title={`${guide.author.name} on ${guide.title}`}
+      href={guide.author.href}
       className="flex items-center gap-2 border bg-card px-3 py-2 rounded-lg"
     >
       <div className="relative">
         <Avatar>
-          <AvatarImage src={blog.author.src} alt={blog.author.name} />
+          <AvatarImage src={guide.author.src} alt={guide.author.name} />
           <AvatarFallback>
-            {blog.author.name?.match(/\b\w/g)?.join("")?.slice(0, 2)}
+            {guide.author.name?.match(/\b\w/g)?.join("")?.slice(0, 2)}
           </AvatarFallback>
         </Avatar>
         <span className="absolute -end-1.5 -top-1.5">
@@ -65,8 +65,8 @@ export default function Author() {
       </div>
 
       <div>
-        <p className="text-sm font-semibold">{blog.author.name}</p>
-        <p className="text-xs text-muted-foreground">{blog.author.title}</p>
+        <p className="text-sm font-semibold">{guide.author.name}</p>
+        <p className="text-xs text-muted-foreground">{guide.author.title}</p>
       </div>
     </Link>
   );

@@ -1,4 +1,4 @@
-import { Blog as CCBlog } from "content-collections";
+import { Guide as CCGuide } from "content-collections";
 
 import { Blog, BlogPosting, Person } from "schema-dts";
 import { SITE } from "@shsfwork/constants/common";
@@ -10,39 +10,39 @@ const author: Person = {
   url: baseUrl(),
 };
 
-const ccBlog: Blog = {
+const ccGuide: Blog = {
   "@type": "Blog",
   name: SITE.domain,
   url: baseUrl(),
   // TODO:
   image: `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(
-    "Blog"
-  )}&description=${encodeURI("Explore all our blog")}`,
-  description: "Explore our blog",
+    "Guide"
+  )}&description=${encodeURI("Explore all our guide")}`,
+  description: "Explore our guide",
   author,
 };
 
-export function CCBlogSchema() {
-  return <JsonLdSchema schema={ccBlog} />;
+export function CCGuideSchema() {
+  return <JsonLdSchema schema={ccGuide} />;
 }
 
-type CCBlogDetailsSchemaProps = {
-  blog: CCBlog;
+type CCGuideDetailsSchemaProps = {
+  guide: CCGuide;
 };
 
-export function CCBlogDetailsSchema({ blog }: CCBlogDetailsSchemaProps) {
-  const url = absoluteUrl(blog.url);
+export function CCGuideDetailsSchema({ guide }: CCGuideDetailsSchemaProps) {
+  const url = absoluteUrl(guide.url);
   const schema: BlogPosting = {
     "@type": "BlogPosting",
-    headline: blog.title,
-    description: blog.excerpt,
+    headline: guide.title,
+    description: guide.excerpt,
 
     url,
-    image: blog.og,
+    image: guide.og,
 
-    datePublished: blog.createdAt,
-    dateCreated: blog.createdAt,
-    dateModified: blog.lastModification,
+    datePublished: guide.createdAt,
+    dateCreated: guide.createdAt,
+    dateModified: guide.lastModification,
 
     author,
 

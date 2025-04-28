@@ -1,4 +1,4 @@
-import { allBlogs, allProducts } from "content-collections";
+import { allGuides, allProducts } from "content-collections";
 import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
 
@@ -43,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: p.lastModification,
     })),
 
-    ...allBlogs.map((b) => ({
+    ...allGuides.map((b) => ({
       url: `${protocol}://${domain}/${b.url}`,
       lastModified: b.lastModification,
     })),

@@ -9,26 +9,26 @@ import {
 } from "@shsfwork/components/shadcn/tooltip";
 import Link from "@shsfwork/components/custom/link";
 import DateTime from "@shsfwork/components/custom/date-time";
-import { Blog } from "@shsfwork/.content-collections/generated";
+import { Guide } from "@shsfwork/.content-collections/generated";
 
-interface BlogCardProps {
-  blog: Blog;
+interface GuideCardProps {
+  guide: Guide;
 }
 
-export default function BlogCard({ blog }: BlogCardProps) {
+export default function GuideCard({ guide }: GuideCardProps) {
   return (
     <Link
-      title={blog.title}
+      title={guide.title}
       className="max-w-80 mx-auto inline-flex"
-      href={blog.url}
+      href={guide.url}
     >
       <div className="relative overflow-hidden h-full bg-card rounded-2xl transition-all duration-200 group hover:shadow border">
         <div className="w-full bg-muted overflow-hidden relative aspect-video">
           <Image
-            src={blog.image.url}
-            alt={blog.title}
+            src={guide.image.url}
+            alt={guide.title}
             blurDataURL={
-              blog.image.blurDataURL || "data:image/svg+xml;base64,AAAA"
+              guide.image.blurDataURL || "data:image/svg+xml;base64,AAAA"
             }
             layout="fill"
             objectFit="cover"
@@ -37,13 +37,13 @@ export default function BlogCard({ blog }: BlogCardProps) {
           <div className="-z-0 absolute inset-0 h-full w-full bg-[radial-gradient(var(--color-bone-500)_1px,transparent_1px)] dark:bg-[radial-gradient(var(--color-outer-space-500)_1px,transparent_1px)] [background-size:6px_6px] " />
         </div>
         <div className="p-4 space-y-4">
-          <h2 className="font-bold text-lg line-clamp-2">{blog.title}</h2>
+          <h2 className="font-bold text-lg line-clamp-2">{guide.title}</h2>
           <p className="font-normal text-sm text-sidebar-foreground line-clamp-4">
-            {blog.excerpt}
+            {guide.excerpt}
           </p>
           <div className="flex flex-row justify-between items-center gap-2">
             <DateTime
-              value={blog.createdAt}
+              value={guide.createdAt}
               title="Published on"
               className="text-sm"
             />
@@ -51,13 +51,13 @@ export default function BlogCard({ blog }: BlogCardProps) {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button size="icon" variant="outline">
-                    {blog.category === "product" && <Donut />}
-                    {blog.category === "boilerplate" && <Candy />}
-                    {blog.category === "starter-kit" && <CakeSlice />}
+                    {guide.category === "product" && <Donut />}
+                    {guide.category === "boilerplate" && <Candy />}
+                    {guide.category === "starter-kit" && <CakeSlice />}
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p className="capitalize">{blog.category}</p>
+                  <p className="capitalize">{guide.category}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>

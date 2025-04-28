@@ -18,9 +18,9 @@ export default function Footer() {
     <footer>
       <Container
         id="footer-container"
-        className="grid gap-12 md:grid-cols-[1.5fr_0.5fr_0.5fr_0.5fr]"
+        // className="grid gap-12 md:grid-cols-[1fr_0.5fr_0.5fr_0.5fr_0.5fr]"
       >
-        <div className="space-y-6">
+        <div className="space-y-6 md:max-w-2/3">
           <Logo isText={false} className="animate-appear opacity-0" />
           <div className="space-y-4">
             <h1 className="text-xl animate-appear opacity-0 delay-100 font-semibold">
@@ -39,18 +39,26 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </Container>
 
-        <div className="space-y-2">
-          <h5>Sitemap</h5>
-          <FooterNav items={FOOTER__NAV.website} id="footer-nav" />
-        </div>
-        <div className="space-y-2">
-          <h5>Featured Products</h5>
-          <FooterNav items={FOOTER__NAV.product} id="footer-nav-product" />
-        </div>
-        <div className="space-y-2">
-          <h5>Online</h5>
-          <FooterNav items={FOOTER__NAV.online} id="footer-nav-legal" />
+      <Container id="footer-nav-container">
+        <div className="grid gap-12 md:grid-cols-[0.5fr_0.5fr_0.5fr_0.5fr]">
+          <div className="space-y-2">
+            <h5>Root</h5>
+            <FooterNav items={FOOTER__NAV.root} id="footer-nav" />
+          </div>
+          <div className="space-y-2">
+            <h5>Open Source</h5>
+            <FooterNav items={FOOTER__NAV.openSource} id="footer-nav" />
+          </div>
+          <div className="space-y-2">
+            <h5>Products</h5>
+            <FooterNav items={FOOTER__NAV.product} id="footer-nav-product" />
+          </div>
+          <div className="space-y-2">
+            <h5>Online</h5>
+            <FooterNav items={FOOTER__NAV.online} id="footer-nav-legal" />
+          </div>
         </div>
       </Container>
 

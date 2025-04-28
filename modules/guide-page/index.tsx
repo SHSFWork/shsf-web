@@ -1,26 +1,26 @@
-import { allBlogs } from "@shsfwork/.content-collections/generated";
+import { allGuides } from "@shsfwork/.content-collections/generated";
 import PageHeader from "@shsfwork/components/custom/page-header";
 import Section from "@shsfwork/components/semantic-elements/section";
 
-import { CCBlogSchema } from "./components/schema";
-import BlogCard from "./components/blog-card";
+import { CCGuideSchema } from "./components/schema";
+import GuideCard from "./components/guide-card";
 
-export default function BlogPage() {
+export default function GuidePage() {
   return (
     <div>
-      <CCBlogSchema />
+      <CCGuideSchema />
 
       <PageHeader
-        title="Blog"
+        title="Guide"
         description="Stay updated with the latest news, tutorials, and insights from the world of web development."
         className="mb-8"
       />
-      <Section id="blog">
+      <Section id="guide">
         <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-          {allBlogs.map((b, i) => (
+          {allGuides.map((b, i) => (
             <li key={i}>
               <article>
-                <BlogCard blog={b} />
+                <GuideCard guide={b} />
               </article>
             </li>
           ))}

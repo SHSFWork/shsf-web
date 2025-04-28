@@ -1,6 +1,6 @@
 import AsideRight from "./components/aside-right";
 
-export default function BlogDetailsLayout({ children }: ChildrenType) {
+export default function GuideDetailsLayout({ children }: ChildrenType) {
   return (
     <div className="grid grid-cols-1 lg:gap-4 lg:grid-cols-[1.5fr_0.5fr]">
       <section className="w-full lg:flex lg:gap-4">

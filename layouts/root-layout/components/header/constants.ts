@@ -1,11 +1,10 @@
 import { allProducts } from "@shsfwork/.content-collections/generated";
 import { HeaderMenuItemProps } from "./types";
-import { Bookmark, CakeSlice, Candy, Home } from "lucide-react";
+import { Bookmark, CakeSlice, Candy, Home, Newspaper } from "lucide-react";
 
 export const HEADER_NAV: HeaderMenuItemProps[] = [
   { title: "Home", url: "/" },
   { title: "Services", url: "/services" },
-  { title: "Blog", url: "/blog" },
   {
     title: "Products",
     url: "#",
@@ -35,7 +34,12 @@ export const HEADER_NAV: HeaderMenuItemProps[] = [
         title: "Bookmarks",
         excerpt: "Explore all our bookmarks",
       },
-
+      {
+        icon: Newspaper,
+        title: "Guide",
+        excerpt: "Explore all our guides",
+        url: "/guide",
+      },
       {
         title: "Boilerplates",
         icon: Candy,
