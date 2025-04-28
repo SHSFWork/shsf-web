@@ -1,10 +1,10 @@
 "use server";
 import {
   CACHE_DURATION,
-  // DEFAULT_BOOKMARKS,
-  // DEFAULT_COLLECTIONS,
+  DEFAULT_BOOKMARKS,
+  DEFAULT_COLLECTIONS,
   RAINDROP_API_URL,
-  // USE_MOCK,
+  USE_MOCK,
 } from "@shsfwork/services/raindrop/constants";
 import { unstable_cache } from "next/cache";
 
@@ -24,9 +24,9 @@ async function getRequestOptions() {
 export const getCollections = unstable_cache(
   async (): Promise<Collections> => {
     try {
-      // if (process.env.NODE_ENV === "development" && USE_MOCK) {
-      //   return DEFAULT_COLLECTIONS;
-      // }
+      if (process.env.NODE_ENV === "development" && USE_MOCK) {
+        return DEFAULT_COLLECTIONS;
+      }
 
       const options = await getRequestOptions();
       const response = await fetch(`${RAINDROP_API_URL}/collections`, options);
@@ -48,9 +48,9 @@ export const getCollections = unstable_cache(
 export const getBookmarks = unstable_cache(
   async (collectionId: number, page = 0): Promise<Bookmarks> => {
     try {
-      // if (process.env.NODE_ENV === "development" && USE_MOCK) {
-      //   return DEFAULT_BOOKMARKS;
-      // }
+      if (process.env.NODE_ENV === "development" && USE_MOCK) {
+        return DEFAULT_BOOKMARKS;
+      }
 
       const options = await getRequestOptions();
       const params = new URLSearchParams({
