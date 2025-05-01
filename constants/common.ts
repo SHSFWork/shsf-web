@@ -42,4 +42,14 @@ export const DEV_ONLINE = {
     title: "Schedule a call",
     href: "https://cal.com/ozan/30min?user=ozan",
   },
+  sponsor: {
+    github: {
+      title: "Sponsor on GitHub",
+      href: "https://github.com/sponsors/ozantekin",
+    },
+    buymeacoffee: {
+      title: "Sponsor on Buy Me a Coffee",
+      href: "https://www.buymeacoffee.com/ozantekin",
+    },
+  },
 };

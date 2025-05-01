@@ -34,7 +34,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${guide.title} — ${SITE.title}`,
+    title: guide.title,
     description: guide.excerpt,
     openGraph: {
       title: guide.title,

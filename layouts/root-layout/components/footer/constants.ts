@@ -4,6 +4,7 @@ export const FOOTER__NAV = {
   root: [
     { href: "/", title: "Home" },
     { href: "/services", title: "Services" },
+    { href: "/sponsorship", title: "Sponsorship" },
   ],
   openSource: [
     { href: "/guide", title: "Guide" },

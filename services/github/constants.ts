@@ -1,3 +1,5 @@
+import { DEV_ONLINE } from "@shsfwork/constants/common";
+
 export const CACHE_DURATION = 60 * 60 * 1.5;
 export const USE_MOCK = process.env.USE_MOCK_DATA_FOR_DEVELOPMENT === "true";
 
@@ -91,3 +93,172 @@ export const GITHUB_ORG_REPO_QUERY = `
     }
   }
 `;
+
+export const DEFAULT_GITHUB_SPONSORSHIP_RESPONSE: GithubSponsorshipResponse = {
+  viewer: {
+    login: "ozantekin",
+    sponsorshipsAsMaintainer: {
+      totalCount: 1,
+      nodes: [
+        {
+          createdAt: "2023-02-24T13:30:38Z",
+          isActive: false,
+          tier: {
+            id: "ST_kwDOAx3c-c4AA-dV",
+            name: "$1 a month",
+            isOneTime: false,
+            monthlyPriceInDollars: 1,
+          },
+          sponsorEntity: {
+            __typename: "User",
+            login: "fcokur",
+            name: "Fehmi Can OKUR",
+            bio: "",
+            avatarUrl:
+              "https://avatars.githubusercontent.com/u/36133366?u=b127c537cc2cd572182d3d85079d96f81e3f5439&v=4",
+            twitterUsername: null,
+          },
+        },
+      ],
+    },
+    sponsoring: {
+      nodes: [],
+    },
+    sponsorsListing: {
+      url: DEV_ONLINE.sponsor.buymeacoffee.href,
+      fullDescription:
+        "Hi, I'm Ozan 👋🏻, a frontend developer and indie maker building simple, useful products that people enjoy using. I'm currently working on improving [screenie.me](https://www.screenie.me/?ref=ozantek.in) with new features and updates.\n\nAdditionally, I contribute to open-source projects and believe strongly in community collaboration.",
+      activeGoal: {
+        kind: "TOTAL_SPONSORS_COUNT",
+        description: "My starting goal is 3 sponsors. ",
+        percentComplete: 0,
+        targetValue: 3,
+        title: "3 monthly sponsors",
+      },
+      tiers: {
+        nodes: [
+          {
+            id: "ST_kwDOAx3c-c4AA-dW",
+            name: "$5 a month",
+            isOneTime: false,
+            description: "Supporter",
+            monthlyPriceInDollars: 5,
+            isCustomAmount: false,
+          },
+          {
+            id: "ST_kwDOAx3c-c4ABmYl",
+            name: "$15 a month",
+            isOneTime: false,
+            description: "Contributor",
+            monthlyPriceInDollars: 15,
+            isCustomAmount: false,
+          },
+          {
+            id: "ST_kwDOAx3c-c4ABmYm",
+            name: "$150 one time",
+            isOneTime: true,
+            description: "Sponsor",
+            monthlyPriceInDollars: 150,
+            isCustomAmount: false,
+          },
+          {
+            id: "ST_kwDOAx3c-c4ABmYn",
+            name: "$300 one time",
+            isOneTime: true,
+            description: "Investor",
+            monthlyPriceInDollars: 300,
+            isCustomAmount: false,
+          },
+        ],
+      },
+    },
+  },
+};
+
+export const GITHUB_SPONSORSHIP_QUERY = `
+query (
+  $sponsorshipsAsMaintainerFirst: Int! = 100,
+  $sponsoringFirst: Int! = 100,
+  $tiersFirst: Int! = 100
+) {
+  viewer {
+    login
+    ... on Sponsorable {
+      sponsorshipsAsMaintainer(activeOnly: false, first: $sponsorshipsAsMaintainerFirst) {
+        totalCount
+        nodes {
+          createdAt
+          isActive
+          tier {
+            id
+            name
+            isOneTime
+            monthlyPriceInDollars
+          }
+          sponsorEntity {
+            __typename
+            ... on User {
+              login
+              name
+              bio
+              avatarUrl
+              twitterUsername
+            }
+            ... on Organization {
+              login
+              name
+              description
+              avatarUrl
+              twitterUsername
+            }
+          }
+        }
+      }
+    }
+    sponsoring(first: $sponsoringFirst) {
+      nodes {
+        ... on User {
+          login
+          name
+          bio
+          avatarUrl
+          twitterUsername
+          sponsorshipForViewerAsSponsor {
+            isOneTimePayment
+            isActive
+            createdAt
+            tier {
+              id
+              isCustomAmount
+              monthlyPriceInDollars
+              isOneTime
+              name
+              description
+            }
+          }
+        }
+      }
+    }
+    sponsorsListing {
+      url
+      fullDescription
+      activeGoal {
+        kind
+        description
+        percentComplete
+        targetValue
+        title
+      }
+      tiers(first: $tiersFirst) {
+        nodes {
+          id
+          name
+          isOneTime
+          description
+          monthlyPriceInDollars
+          isCustomAmount
+        }
+      }
+    }
+  }
+}`;

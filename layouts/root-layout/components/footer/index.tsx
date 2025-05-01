@@ -18,7 +18,6 @@ export default function Footer() {
     <footer>
       <Container
         id="footer-container"
-        // className="grid gap-12 md:grid-cols-[1fr_0.5fr_0.5fr_0.5fr_0.5fr]"
       >
         <div className="space-y-6 md:max-w-2/3">
           <Logo isText={false} className="animate-appear opacity-0" />

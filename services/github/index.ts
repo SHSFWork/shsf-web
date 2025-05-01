@@ -7,6 +7,8 @@ import {
   DEFAULT_ORGANIZATION_REPOSITORIES,
   USE_MOCK,
   GITHUB_ORG_REPO_QUERY,
+  GITHUB_SPONSORSHIP_QUERY,
+  DEFAULT_GITHUB_SPONSORSHIP_RESPONSE,
 } from "./constants";
 
 async function getGithubToken() {
@@ -50,6 +52,41 @@ export const getOrganizationRepositories = cache(
     }
   },
   ["github-organization-repositories"],
+  {
+    revalidate: CACHE_DURATION,
+  }
+);
+
+export const getGithubSponsors = cache(
+  async (
+    sponsorshipsAsMaintainerFirst: number = 100,
+    sponsoringFirst: number = 100,
+    tiersFirst: number = 100
+  ): Promise<GithubSponsorshipResponse | null> => {
+    try {
+      // Return mock data in development
+      if (process.env.NODE_ENV === "development" && USE_MOCK) {
+        return DEFAULT_GITHUB_SPONSORSHIP_RESPONSE;
+      }
+      const octokit = new Octokit({
+        auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
+      });
+
+      const data = await octokit.graphql<GithubSponsorshipResponse>(
+        GITHUB_SPONSORSHIP_QUERY,
+        {
+          sponsorshipsAsMaintainerFirst,
+          sponsoringFirst,
+          tiersFirst,
+        }
+      );
+      return data;
+    } catch (error) {
+      console.error("Error fetching GitHub sponsorships:", error);
+      return null;
+    }
+  },
+  ["github-sponsorship"],
   {
     revalidate: CACHE_DURATION,
   }

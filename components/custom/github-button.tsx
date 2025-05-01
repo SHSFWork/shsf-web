@@ -6,13 +6,13 @@ import { Github } from "lucide-react";
 export default function GithubButton() {
   return (
     <Link
-      title={REPO_ONLINE.github.title}
-      href={REPO_ONLINE.github.href}
+      title={REPO_ONLINE.source.title}
+      href={REPO_ONLINE.source.href}
       className={buttonVariants({ variant: "ghost", size: "icon" })}
     >
       <Github className="size-4 text-muted-foreground fill-muted-foreground" />
 
-      <span className="sr-only">{REPO_ONLINE.github.title}</span>
+      <span className="sr-only">{REPO_ONLINE.source.title}</span>
     </Link>
   );
 }
