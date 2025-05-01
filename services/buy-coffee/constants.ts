@@ -1,6 +1,8 @@
 export const CACHE_DURATION = 60 * 60 * 1.5;
 export const USE_MOCK_DATA_FOR_DEVELOPMENT = true;
 
+export const URL = "https://developers.buymeacoffee.com/api/v1";
+
 export const DEFAULT_BUY_COFFEE_SUBSCRIPTION_RESPONSE: SubscriptionResponse = {
   current_page: 1,
   data: [

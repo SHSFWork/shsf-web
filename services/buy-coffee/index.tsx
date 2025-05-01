@@ -5,6 +5,7 @@ import {
   DEFAULT_BUY_COFFEE_SUBSCRIPTION_RESPONSE,
   DEFAULT_BUY_COFFEE_SUPPORTERS_RESPONSE,
   USE_MOCK_DATA_FOR_DEVELOPMENT,
+  URL,
 } from "./constants";
 
 export const getBuyCoffeeSubscriptions = cache(
@@ -19,9 +20,8 @@ export const getBuyCoffeeSubscriptions = cache(
         return DEFAULT_BUY_COFFEE_SUBSCRIPTION_RESPONSE;
       }
 
-      const URL = `https://developers.buymeacoffee.com/api/v1/subscriptions?status=${status}`;
       console.log("API HIT: buy me a coffee");
-      const res = await fetch(URL, {
+      const res = await fetch(`${URL}/subscriptions?status=${status}`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${process.env.BUY_COFFEE_TOKEN}`,
@@ -55,9 +55,8 @@ export const getBuyCoffeeOneTimeSupporters = cache(
         return DEFAULT_BUY_COFFEE_SUPPORTERS_RESPONSE;
       }
 
-      const URL = `https://developers.buymeacoffee.com/api/v1/supporters`;
       console.log("API HIT: buy me a coffee");
-      const res = await fetch(URL, {
+      const res = await fetch(`${URL}/supporters`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${process.env.BUY_COFFEE_TOKEN}`,

@@ -19,6 +19,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
 
     {
+      url: `${protocol}://${domain}/sponsorship`,
+      lastModified: new Date(),
+    },
+
+    {
       url: `${protocol}://${domain}/bookmarks`,
       lastModified: new Date(),
     },
@@ -34,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
 
     {
-      url: `${protocol}://${domain}/terms-of-service`,
+      url: `${protocol}://${domain}/guide`,
       lastModified: new Date(),
     },
 
