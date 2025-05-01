@@ -48,12 +48,12 @@ export const getBuyCoffeeSubscriptions = cache(
 export const getBuyCoffeeOneTimeSupporters = cache(
   async (): Promise<SupporterResponse> => {
     try {
-      // if (
-      //   process.env.NODE_ENV === "development" &&
-      //   USE_MOCK_DATA_FOR_DEVELOPMENT
-      // ) {
-      //   return DEFAULT_BUY_COFFEE_SUPPORTERS_RESPONSE;
-      // }
+      if (
+        process.env.NODE_ENV === "development" &&
+        USE_MOCK_DATA_FOR_DEVELOPMENT
+      ) {
+        return DEFAULT_BUY_COFFEE_SUPPORTERS_RESPONSE;
+      }
 
       const URL = `https://developers.buymeacoffee.com/api/v1/supporters`;
       console.log("API HIT: buy me a coffee");
