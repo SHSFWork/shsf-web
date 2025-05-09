@@ -10,8 +10,8 @@ export default function OpenSourceBadge() {
       className="inline-flex items-center gap-1.5 text-sm"
       aria-label="View our open source code on GitHub"
     >
-      <span className="text-muted-foreground">Source on</span>
-      <Github className="size-4  text-muted-foreground fill-muted-foreground" />
+      <span>Source on</span>
+      <Github className="size-4" />
     </Link>
   );
 }

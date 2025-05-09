@@ -99,20 +99,20 @@ export const WALL_OF_LOVE = [
 
 export const PRODUCTS = [
   {
-    ...findProductByPath("unarkhive"),
-    titleClassName: "text-blue-600",
+    ...findProductByPath("screenie"),
+    titleClassName: "text-orange-600",
     className:
       "[grid-area:stack] grayscale hover:grayscale-0 hover:z-10 transition-all duration-500",
   },
   {
-    ...findProductByPath("screenie"),
-    titleClassName: "text-orange-500",
+    ...findProductByPath("shsfui"),
+    titleClassName: "text-blue-500",
     className:
       "[grid-area:stack] translate-x-4 translate-y-12 grayscale hover:grayscale-0 hover:z-20 transition-all duration-500",
   },
   {
-    ...findProductByPath("shsfui"),
-    titleClassName: "text-blue-500",
+    ...findProductByPath("myikas"),
+    titleClassName: "text-emerald-500",
     className:
       "[grid-area:stack] translate-x-8 translate-y-24 grayscale hover:grayscale-0 hover:z-30 transition-all duration-500",
   },

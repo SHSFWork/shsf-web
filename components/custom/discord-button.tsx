@@ -1,3 +1,4 @@
+import { Icons } from "@shsfwork/assets/icons";
 import { buttonVariants } from "@shsfwork/components/custom/3d-button";
 import Link from "@shsfwork/components/custom/link";
 import { REPO_ONLINE } from "@shsfwork/constants/common";
@@ -7,9 +8,9 @@ export default function DiscordButton() {
     <Link
       title={REPO_ONLINE.discord.title}
       href={REPO_ONLINE.discord.href}
-      className={buttonVariants({ variant: "ghost" })}
+      className={buttonVariants({ variant: "ghost", size: "icon" })}
     >
-      Join us
+      <Icons.discord />
     </Link>
   );
 }

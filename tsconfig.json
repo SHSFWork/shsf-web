@@ -28,8 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".contentlayer/generated",
-    "www/guide/hello-world/index.mdx"
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }

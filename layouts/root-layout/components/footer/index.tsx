@@ -7,7 +7,7 @@ import Balancer from "@shsfwork/components/semantic-elements/balancer";
 import FooterNav from "./components/nav";
 import NewsletterBgEffect from "./components/newsletter-bg-effect";
 
-import { FOOTER__NAV } from "./constants";
+import { FOOTER_NAV_SECTIONS } from "./constants";
 import OpenSourceBadge from "@shsfwork/components/custom/open-source-badge";
 import DiscordButton from "@shsfwork/components/custom/discord-button";
 import { NewsletterSection } from "@shsfwork/components/custom/newsletter";
@@ -16,9 +16,7 @@ import GithubButton from "@shsfwork/components/custom/github-button";
 export default function Footer() {
   return (
     <footer>
-      <Container
-        id="footer-container"
-      >
+      <Container id="footer-container">
         <div className="space-y-6 md:max-w-2/3">
           <Logo isText={false} className="animate-appear opacity-0" />
           <div className="space-y-4">
@@ -41,23 +39,13 @@ export default function Footer() {
       </Container>
 
       <Container id="footer-nav-container">
-        <div className="grid gap-12 md:grid-cols-[0.5fr_0.5fr_0.5fr_0.5fr]">
-          <div className="space-y-2">
-            <h5>Root</h5>
-            <FooterNav items={FOOTER__NAV.root} id="footer-nav" />
-          </div>
-          <div className="space-y-2">
-            <h5>Open Source</h5>
-            <FooterNav items={FOOTER__NAV.openSource} id="footer-nav" />
-          </div>
-          <div className="space-y-2">
-            <h5>Products</h5>
-            <FooterNav items={FOOTER__NAV.product} id="footer-nav-product" />
-          </div>
-          <div className="space-y-2">
-            <h5>Online</h5>
-            <FooterNav items={FOOTER__NAV.online} id="footer-nav-legal" />
-          </div>
+        <div className="flex gap-24 flex-wrap">
+          {FOOTER_NAV_SECTIONS.map((section) => (
+            <div className="space-y-2 flex-1" key={section.title}>
+              <h5>{section.title}</h5>
+              <FooterNav items={section.items} id={section.id} />
+            </div>
+          ))}
         </div>
       </Container>
 
@@ -75,9 +63,7 @@ export default function Footer() {
       >
         <OpenSourceBadge />
 
-        <p className="text-sm text-muted-foreground">
-          &copy; 2025-present. All rights reserved.
-        </p>
+        <p className="text-sm">&copy; 2025-present. All rights reserved.</p>
       </Container>
     </footer>
   );

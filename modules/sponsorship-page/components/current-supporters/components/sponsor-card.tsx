@@ -108,8 +108,7 @@ const GithubItem = (sponsor: SponsorItemProps) => {
       <TooltipContent side="top" className="min-w-36 text-xs space-y-1">
         <div>
           <p className="font-medium">{sponsor.sponsorEntity?.name}</p>
-
-          <span>@{sponsor.sponsorEntity?.login}, </span>
+          <span>@{sponsor.sponsorEntity?.login}</span>
         </div>
 
         <div className="flex items-center justify-between opacity-60">

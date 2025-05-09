@@ -11,13 +11,13 @@ export default function Header() {
   return (
     <header className="w-full">
       <Container id="header">
-        <nav className="hidden h-16 items-center justify-between lg:flex">
-          <div className="flex items-center gap-6">
+        <nav className="hidden items-center justify-between lg:flex">
+          <div className="flex items-center !gap-6">
             <Logo />
             <DesktopNav />
           </div>
 
-          <div className="flex items-center justify-center gap-1.5">
+          <div className="flex items-center justify-center gap-1">
             <DiscordButton />
             <GithubButton />
             <ThemeSwitcher />

@@ -1,3 +1,5 @@
+"use client";
+import * as React from "react";
 import { buttonVariants } from "@shsfwork/components/custom/3d-button";
 import { Card, CardContent } from "@shsfwork/components/custom/3d-card";
 import Link from "@shsfwork/components/custom/link";
@@ -12,16 +14,26 @@ interface AboutMeProps {
 }
 
 export default function AboutMe({ githubSponsors }: AboutMeProps) {
-  const activeGithubGoal = githubSponsors?.viewer?.sponsorsListing?.activeGoal;
+  const { activeGithubGoal, activeSponsors, goalPercentage } =
+    React.useMemo(() => {
+      const activeGithubGoal =
+        githubSponsors?.viewer?.sponsorsListing?.activeGoal;
+      const githubSponsorships =
+        githubSponsors?.viewer?.sponsorshipsAsMaintainer?.nodes || [];
+      const activeSponsors = githubSponsorships.filter(
+        (s) => s.isActive
+      ).length;
 
-  const githubSponsorships =
-    githubSponsors?.viewer?.sponsorshipsAsMaintainer?.nodes || [];
+      const goalPercentage = activeGithubGoal
+        ? Math.min(100, (activeSponsors / activeGithubGoal.targetValue) * 100)
+        : 0;
 
-  const activeSponsors = githubSponsorships.filter((s) => s.isActive).length;
-
-  const goalPercentage = activeGithubGoal
-    ? Math.min(100, (activeSponsors / activeGithubGoal.targetValue) * 100)
-    : 0;
+      return {
+        activeGithubGoal,
+        activeSponsors,
+        goalPercentage,
+      };
+    }, [githubSponsors]);
 
   return (
     <Section id="about-work" className="py-8 md:py-12">
